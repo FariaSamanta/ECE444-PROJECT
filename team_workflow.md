@@ -1,8 +1,7 @@
 # Team Workflow
 
-## Team
+## Team Name
 
-**Team Name: **
 
 All team members have reviewed and agreed to the workflow described in this document. All team members have also reviewed and agreed to follow the course writing guidelines.
 
