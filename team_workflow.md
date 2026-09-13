@@ -37,7 +37,7 @@ No member will be responsible exclusively for writing, editing, or presenting. T
 
 ### Proposed Arrangements
 - **Sprint Planning (every other week):** Tuesday 12-1 PM EST
-- **Backlog Grooming:** Friday 5-6 PM EST 
+- **Backlog Grooming (every other week):** Friday 5-6 PM EST 
 - **Synchronous Stand-up:** Sunday 6-8 PM EST
 - **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
@@ -53,6 +53,13 @@ Instagram will be the team’s primary communication channel outside meetings. M
 
 ### File Sharing
 The group’s project codebase will be stored in a centralized GitHub repo 
+
+### Task Table
+
+| Deliverable |Draft Due|Due|Writer | Editor | Rewrite  | Presenter(s) |
+|---|---|---|---|---|---|---|
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra| | | All |
+
 
 ## Agreement
 
