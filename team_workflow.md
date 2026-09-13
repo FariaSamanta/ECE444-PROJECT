@@ -53,7 +53,7 @@ group’s shared OneDrive folder.
 Instagram will be the team’s primary communication channel outside meetings. Members should check it regularly and respond to messages within 24 hours. Zoom calls will be used for online meetings. For urgent issues or communication failures, email will be used, with responses expected within 24 hours.
 
 ### File Sharing
-The group’s project codebase will be stored in a centralized GitHub repo 
+The group’s project codebase will be stored in a centralized GitHub repo and shared with all members of the group. Other documents will be shared on OneDrive Folder 
 
 ### Task Table
 
