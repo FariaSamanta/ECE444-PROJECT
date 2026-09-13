@@ -36,11 +36,11 @@ No member will be responsible exclusively for writing, editing, or presenting. T
 **Planning Tool:** (Note pls add this also make sure it matches below)
 
 ### Proposed Arrangements
-**Sprint Planning (every other week):** Tuesday 12-1PM EST
-**Backlog Grooming:** Friday 5-6PM EST 
-**Synchronous Stand-up:** Sunday 12-1PM EST
-**Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
-**Milestone Retrospective:** Ad hoc, scheduled as necessary
+- **Sprint Planning (every other week):** Tuesday 12-1PM EST
+- **Backlog Grooming:** Friday 5-6PM EST 
+- **Synchronous Stand-up:** Sunday 12-1PM EST
+- **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
+- **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
 ### Meeting Minutes
 The team will use a Google Document to centralize all meeting minutes, with a different member
