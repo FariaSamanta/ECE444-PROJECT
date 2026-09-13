@@ -60,6 +60,9 @@ The group’s project codebase will be stored in a centralized GitHub repo
 |---|---|---|---|---|---|---|
 | Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, | | | All |
 
+The table will be updated as the project schedule and team responsibilities change.
+
+## Conflict Resolution 
 
 ## Agreement
 
