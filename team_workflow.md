@@ -2,7 +2,8 @@
 
 ## Team Name
 
-
+## Preamble 
+The following is the workflow document for ECE444 Team-
 All team members have reviewed and agreed to the workflow described in this document. All team members have also reviewed and agreed to follow the course writing guidelines.
 
 ## Roles
@@ -43,10 +44,10 @@ No member will be responsible exclusively for writing, editing, or presenting. T
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
 ### Meeting Minutes
-The team will use a Google Document to centralize all meeting minutes, with a different member
+The team will use a OneDrive word Document to centralize all meeting minutes, with a different member
 each meeting (in rotation) overseeing the notetaking, with the other members validating its accuracy and
-conciseness. The document’s name will be “ Meeting_Minutes.docx”, and available in the
-group’s shared Google Drive folder
+conciseness. The document’s name will be “Meeting_Minutes.docx” and available in the
+group’s shared OneDrive folder.
 
 ### Communication
 Instagram will be the team’s primary communication channel outside meetings. Members should check it regularly and respond to messages within 24 hours. Zoom calls will be used for online meetings. For urgent issues or communication failures, email will be used, with responses expected within 24 hours.
