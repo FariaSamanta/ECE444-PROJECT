@@ -38,7 +38,7 @@ No member will be responsible exclusively for writing, editing, or presenting. T
 ### Proposed Arrangements
 - **Sprint Planning (every other week):** Tuesday 12-1 PM EST
 - **Backlog Grooming:** Friday 5-6 PM EST 
-- **Synchronous Stand-up:** Sunday 12-1 PM EST
+- **Synchronous Stand-up:** Sunday 6-8 PM EST
 - **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
