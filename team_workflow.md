@@ -58,7 +58,7 @@ The group’s project codebase will be stored in a centralized GitHub repo
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra| | | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, | | | All |
 
 
 ## Agreement
