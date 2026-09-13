@@ -12,7 +12,7 @@ All members are expected to contribute equally to writing, editing, rewriting, a
 
 | Member | Email | Role | Skills | Responsibilities |
 |---|---|---|---|---|
-| Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Frontend & Backend Developer | Project management, Git, Frontend, backend, APIs, databases | Coordinate milestones, track progress, assign tasks, contribute to development, writing, editing, and presentations. |
+| Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Frontend & Backend Developer | Project management, Git, Frontend, backend, APIs, databases | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
 | Member 2 |  |  | |  |
 | Member 3 | | | | |
 | Member 4 |  |  |
