@@ -3,8 +3,7 @@
 ## Team Name
 
 ## Preamble 
-The following is the workflow document for ECE444 Team-
-All team members have reviewed and agreed to the workflow described in this document. All team members have also reviewed and agreed to follow the course writing guidelines.
+The following is the workflow document for ECE444 Team [Team Name]. All team members have reviewed and agreed to the workflow described in this document. All team members have also reviewed and agreed to follow the course writing guidelines. The team has discussed and agreed upon a target grade of 85 % for this project, and each member has confirmed their expected time commitment and availability to meet that goal.
 
 ## Roles
 
@@ -58,7 +57,7 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody | | | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous | Karen Mahrous | | All |
 
 The table will be updated as the project schedule and team responsibilities change.
 
