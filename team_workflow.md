@@ -1,25 +1,42 @@
-# Team Workflow
-
-## Team Name
+Title: [Group2-TeamName] Workflow
+Date: [Insert date of finalization]
 
 ## Preamble 
-The following is the workflow document for ECE444 Team [Team Name]. All team members have reviewed and agreed to the workflow described in this document. All team members have also reviewed and agreed to follow the course writing guidelines. The team has discussed and agreed upon a target grade of 85 % for this project, and each member has confirmed their expected time commitment and availability to meet that goal.
+The following is the workflow document for ECE444 Team [Team Name]. All team members have reviewed and agreed to the workflow described in this document. The team has discussed individual grade expectations and commitment levels for this course, and each member has agreed to dedicate the necessary time and effort accordingly. All team members have also
+reviewed and agreed to follow the course writing guidelines and will apply them to all communication pieces for this course.
 
-## Roles
+## Team Roles
 
-All members are expected to contribute equally to writing, editing, rewriting, and presenting project deliverables. Individual roles identify primary areas of responsibility but do not limit other team members from contributing.
+### Malhotra — Software Lead
+Malhotra is responsible for the architecture decisions on the project, leading the design of the architecture specification, and having final say on all class interfaces. She brings experience in project management,
+frontend and backend development, REST APIs, database management, and Agile development, with strong proficiency in Python, JavaScript, and Git/GitHub.
 
-| Member | Email | Role | Skills | Responsibilities |
-|---|---|---|---|---|
-| Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Full Stack Developer | Project Management, Frontend Development, Backend Development, REST APIs, Database Management, Python, JavaScript, Git/GitHub, UI/UX Integration, Debugging, and Agile Development. | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
-| Ireen Cheralody | ireen.cheralody@mail.utoronto.ca | Project Manager, Full Stack Developer | Project Management, Frontend Development, Backend Development, Python, C/C++, Java, JavaScript, HTML, CSS, PyTorch, Git/GitHub, UI/UX Integration, Debugging, and Agile Development. | Create milestones, breakdown workflow, and ensure the team is on track towards completing deadlines. Contribute to the development, programming, and debugging of the project, as well as the presentation material. |
-| Karen Mahrous | karen.mahrous@mail.utoronto.ca | Full Stack Developer, QA & Testing | Frontend Development, Backend Development, Python, Java, JavaScript, HTML, CSS, SQL, Git/GitHub, Testing & Debugging, UI/UX Integration, and Agile Development. | Contribute to development and testing across the stack, assist with debugging and code review, and support milestone documentation and presentations. |
-|  |  |  |
+Duties:
+- Lead architecture and interface design decisions
+- Assign programming tasks to team members
+- Coordinate milestones and track overall progress
+- Contribute to development, debugging, and presentations
+
+### Cheralody — Project Manager
+Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
+
+Duties:
+- Create and manage milestone deadlines and workflow breakdowns
+- Ensure the team stays on track toward all deliverables
+- Contribute to development, programming, and debugging
+- Support the preparation of presentation material
+
+### Mahrous — Backend & Frontend Developer, UX/UI Designer
+Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
+
+Duties:
+- Design UI mockups, prototypes, and visual assets for the application
+- Troubleshoot UX issues in collaboration with the development team
+- Contribute to development and testing across the stack
+- Assist with debugging, code review, and milestone documentation
 
 ### Shared Responsibilities
-
 Regardless of role, every member will:
-
 - Complete assigned work by the agreed deadline.
 - Participate in team meetings and discussions.
 - Contribute to project documentation.
@@ -66,17 +83,21 @@ The table will be updated as the project schedule and team responsibilities chan
 ### Creative & Technical Disagreements
 When team members disagree on a design, technical approach, or project direction, the issue will first be discussed openly during the next scheduled team meeting (or sooner, asynchronously, if the decision is time-sensitive). If the team cannot reach consensus through discussion, the decision will be settled by a majority vote, with each member receiving one vote. In the event of a tie, the lead assigned to that milestone or deliverable will cast the deciding vote. All disagreements and their resolutions will be recorded in the meeting minutes for future reference and accountability.
 
-### Missed Deadlines
-The team recognizes that occasional delays can happen, but repeated or
-unexplained missed deadlines affect the whole team's progress and grade.
-The following escalation process will apply:
+### Actionable Consequences to Participation
+The team recognizes that occasional delays can happen, but repeated or unexplained missed deadlines affect the whole team's progress and grade. The following escalation process will apply:
 
-1. **First occurrence:** The team member is contacted directly during meeting time to understand the cause of the
-delay. The conversation and agreed next steps are logged in the meeting minutes.
-2. **Second occurrence:** A written warning is issued via email to themember, copying all team members, outlining the impact on the team's progress and the expectation going forward.
-3. **Third occurrence, or a pattern of unexplained missed work:** The team compiles a written record of all related communications (emails, minutes, messages) and notifies the course instructor, along with a factual summary of the missed contributions for their awareness.
+1. **First occurrence (internal deadline):** The team member is contacted directly during meeting time to understand the cause of the delay. The conversation and agreed next steps are logged in the meeting minutes.
 
-**Valid reasons** for missed work that include documented personal or health emergencies, members are expected to notify the team as early as possible so work can be redistributed fairly.
+2. **Second occurrence (internal deadline):** A written warning is issued via email to the member, copying all team members, outlining the impact on the team's progress and the expectation going forward.
+
+3. **Missed course deadline, or a third internal occurrence:** The Project Manager will collect evidence from the team's communication channel, emails, and GitHub activity. This evidence will be compiled into a PDF and sent to the instructor along with a factual summary of the missed
+contribution and its impact on the deliverable. The responsible member's remaining tasks for that milestone will be immediately reassigned among the rest of the team to protect the deliverable, and the member will be required to take on an equivalent or greater share of work on the following milestone to rebalance their contribution.
+
+**Valid reasons** for missed work include documented personal or health emergencies. Members are expected
+to notify the team as early as possible so work can be redistributed fairly.
+
+### Exceptional Contributions
+Members who consistently go beyond their assigned responsibilities, help teammates who are struggling, or take on additional work to keep the team on schedule will have this acknowledged in the meeting minutes. This record may be referenced if individual contribution differences become relevant to grading discussions.
 
 ## Agreement
 
