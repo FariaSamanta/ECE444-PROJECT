@@ -14,7 +14,7 @@ All members are expected to contribute equally to writing, editing, rewriting, a
 |---|---|---|---|---|
 | Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Full Stack Developer | Project Management, Frontend Development, Backend Development, REST APIs, Database Management, Python, JavaScript, Git/GitHub, UI/UX Integration, Debugging, and Agile Development. | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
 | Ireen Cheralody | ireen.cheralody@mail.utoronto.ca | Project Manager, Full Stack Developer | Project Management, Frontend Development, Backend Development, Python, C/C++, Java, JavaScript, HTML, CSS, PyTorch, Git/GitHub, UI/UX Integration, Debugging, and Agile Development. | Create milestones, breakdown workflow, and ensure the team is on track towards completing deadlines. Contribute to the development, programming, and debugging of the project, as well as the presentation material. |
-|  | | | | |
+| Karen Mahrous | karen.mahrous@mail.utoronto.ca | Full Stack Developer, QA & Testing | Frontend Development, Backend Development, Python, Java, JavaScript, HTML, CSS, SQL, Git/GitHub, Testing & Debugging, UI/UX Integration, and Agile Development. | Contribute to development and testing across the stack, assist with debugging and code review, and support milestone documentation and presentations. |
 |  |  |  |
 
 ### Shared Responsibilities
@@ -63,6 +63,21 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 The table will be updated as the project schedule and team responsibilities change.
 
 ## Conflict Resolution 
+
+### Creative & Technical Disagreements
+When team members disagree on a design, technical approach, or project direction, the issue will first be discussed openly during the next scheduled team meeting (or sooner, asynchronously, if the decision is time-sensitive). If the team cannot reach consensus through discussion, the decision will be settled by a majority vote, with each member receiving one vote. In the event of a tie, the lead assigned to that milestone or deliverable will cast the deciding vote. All disagreements and their resolutions will be recorded in the meeting minutes for future reference and accountability.
+
+### Missed Deadlines
+The team recognizes that occasional delays can happen, but repeated or
+unexplained missed deadlines affect the whole team's progress and grade.
+The following escalation process will apply:
+
+1. **First occurrence:** The team member is contacted directly during meeting time to understand the cause of the
+delay. The conversation and agreed next steps are logged in the meeting minutes.
+2. **Second occurrence:** A written warning is issued via email to themember, copying all team members, outlining the impact on the team's progress and the expectation going forward.
+3. **Third occurrence, or a pattern of unexplained missed work:** The team compiles a written record of all related communications (emails, minutes, messages) and notifies the course instructor, along with a factual summary of the missed contributions for their awareness.
+
+**Valid reasons** for missed work that include documented personal or health emergencies, members are expected to notify the team as early as possible so work can be redistributed fairly.
 
 ## Agreement
 
