@@ -13,9 +13,9 @@ All members are expected to contribute equally to writing, editing, rewriting, a
 | Member | Email | Role | Skills | Responsibilities |
 |---|---|---|---|---|
 | Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Full Stack Developer | Project management, frontend development, backend development, REST APIs, database management, Python, JavaScript, Git/GitHub, UI/UX integration, debugging, and Agile development. | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
-| Member 2 |  |  | |  |
-| Member 3 | | | | |
-| Member 4 |  |  |
+|  |  |  | |  |
+|  | | | | |
+|  |  |  |
 
 ### Shared Responsibilities
 
