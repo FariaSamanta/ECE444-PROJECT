@@ -12,7 +12,7 @@ All members are expected to contribute equally to writing, editing, rewriting, a
 
 | Member | Email | Role | Skills | Responsibilities |
 |---|---|---|---|---|
-| Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Full Stack Developer | Project Management, Frontend Development, Backend Development, REST APIs, Database Management, Python, JavaScript, Git/GitHub, UI/UX Integration, Debugging, and Agile development. | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
+| Riana Malhotra | riana.malhotra@mail.utoronto.ca | Software Lead, Full Stack Developer | Project Management, Frontend Development, Backend Development, REST APIs, Database Management, C/C++, Python, JavaScript, Git/GitHub, UI/UX Integration, Debugging, and Agile development. | Coordinate milestones, track progress, contribute to development, programming, debugging and presentations. |
 | Ireen Cheralody | ireen.cheralody@mail.utoronto.ca | Project Manager, Full Stack Developer | Project Management, Frontend Development, Backend Development, Python, C/C++, Java, JavaScript, HTML, CSS, PyTorch, Git/GitHub, UI/UX Integration, Debugging, and Agile development. | Create milestones, break down workflow, and ensure the team is on track towards completing deadlines. Contribute to the development, programming, and debugging of the project, as well as the presentation material. |
 |  | | | | |
 |  |  |  |
