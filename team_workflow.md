@@ -9,6 +9,7 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 
 ### Riana Malhotra — Software Lead, Full Stack Developer
 **Email:**
+
 Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
@@ -29,6 +30,7 @@ Duties:
 
 ### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
 **Email:**
+
 Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
