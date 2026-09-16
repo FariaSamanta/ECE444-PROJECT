@@ -53,6 +53,15 @@ Duties:
 - Participate in code reviews, debugging, software integration, architectural discussions, and technical documentation.
 - Research relevant AI and software technologies and help evaluate engineering trade-offs before major implementation decisions are made.
 
+### Technical Ownership and Cross-Functional Development
+
+Primary roles establish ownership and accountability but do not restrict members from contributing outside their assigned areas. The team intends to develop the project as a maintainable and scalable software system; therefore, members will collaborate across frontend development, backend development, AI/ML integration, database design, testing, security, deployment, and documentation.
+
+Major technical decisions affecting system architecture, scalability, security, APIs, database schemas, or interfaces between components will be reviewed by at least two team members before implementation. No critical software component will have only one team member familiar with its implementation.
+
+Code changes will be reviewed through GitHub pull requests before being merged into the main development branch. Automated tests and continuous-integration checks will be introduced where appropriate as the project evolves.
+
+The team will prioritize modular design, documented interfaces, testability, maintainability, security, and scalability so that the completed application can continue to be developed and deployed beyond the scope of ECE444.
 
 ### Shared Responsibilities
 Regardless of role, every member will:
@@ -96,16 +105,6 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 | Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous | Karen Mahrous | | All |
 
 The table will be updated as the project schedule and team responsibilities change.
-
-### Technical Ownership and Cross-Functional Development
-
-Primary roles establish ownership and accountability but do not restrict members from contributing outside their assigned areas. The team intends to develop the project as a maintainable and scalable software system; therefore, members will collaborate across frontend development, backend development, AI/ML integration, database design, testing, security, deployment, and documentation.
-
-Major technical decisions affecting system architecture, scalability, security, APIs, database schemas, or interfaces between components will be reviewed by at least two team members before implementation. No critical software component will have only one team member familiar with its implementation.
-
-Code changes will be reviewed through GitHub pull requests before being merged into the main development branch. Automated tests and continuous-integration checks will be introduced where appropriate as the project evolves.
-
-The team will prioritize modular design, documented interfaces, testability, maintainability, security, and scalability so that the completed application can continue to be developed and deployed beyond the scope of ECE444.
 
 ## Conflict Resolution 
 
