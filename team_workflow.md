@@ -76,20 +76,23 @@ Regardless of role, every member will:
 
 No member will be responsible exclusively for writing, editing, or presenting. These responsibilities will be distributed across the team.
 
+Programming and project tasks may be proposed or assigned by any team member based on the current milestone, technical needs, and team availability. Final task ownership will be agreed upon collaboratively during planning meetings or through the team’s communication channel.
+
+
 ## Coordination
 
 ### Meeting Times
 **Planning Tool:** [www.when2meet.com](https://www.when2meet.com/?38536831-BD2Nx)
 
 ### Proposed Arrangements
-- **Sprint Planning (every other week):** Tuesday 12-1 PM EST
-- **Backlog Grooming (every other week):** Friday 5-6 PM EST 
-- **Synchronous Stand-up:** Sunday 6-8 PM EST
-- **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
+- **Sprint Planning (every other week):** Tuesday 12-1 PM ET
+- **Backlog Grooming (every other week):** Friday 5-6 PM ET 
+- **Synchronous Stand-up:** Sunday 6-8 PM ET
+- **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM ET
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
 ### Meeting Minutes
-The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. The document’s name will be “ Meeting_Minutes.docx”, and available in the group’s shared OneDrive folder.
+The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. TThe document will be named Meeting_Minutes.docx and will be stored in the group’s shared OneDrive folder.
 
 The folder can be accessed [here](https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly)
 
@@ -97,7 +100,7 @@ The folder can be accessed [here](https://utoronto-my.sharepoint.com/:f:/g/perso
 Instagram will be the team’s primary communication channel outside meetings. Members should check it regularly and respond to messages within 24 hours. Zoom calls will be used for online meetings. For urgent issues or communication failures, email will be used, with responses expected within 24 hours.
 
 ### File Sharing
-The group’s project codebase will be stored in a centralized GitHub repo and shared with all members of the group. Other documents will be shared on OneDrive Folder 
+The group’s project codebase will be stored in a centralized GitHub repo and shared with all members of the group. Other project documents will be stored in the team’s shared OneDrive folder. 
 
 ### Task Table
 
