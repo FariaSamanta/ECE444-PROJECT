@@ -8,6 +8,7 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 ## Team Roles
 
 ### Riana Malhotra — Software Lead, Full Stack Developer
+**Email:**
 Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
@@ -17,6 +18,7 @@ Duties:
 - Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
 
 ### Ireen Cheralody — Project Manager
+**Email:**
 Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
@@ -26,6 +28,7 @@ Duties:
 - Support the preparation of presentation material
 
 ### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
+**Email:**
 Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
@@ -35,6 +38,7 @@ Duties:
 - Assist with debugging, code review, and milestone documentation
 
 ### Faria Samanta Akbar — AI/ML Developer, Backend & Frontend Developer
+**Email:** faria.akbar@mail.utoronto.ca
 
 Faria Samanta Akbar contributes to the development of the project’s AI/ML functionality while also working across the backend and frontend of the application. She brings experience in Python, C/C++, machine learning, computer vision, AI model development and evaluation, data-processing pipelines, API integration, Git/GitHub, software debugging, and technical experimentation. She will also contribute substantially to frontend development throughout the project in order to strengthen her experience building complete user-facing software systems.
 
@@ -96,7 +100,7 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous | Karen Mahrous | | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | | All |
 
 The table will be updated as the project schedule and team responsibilities change.
 
