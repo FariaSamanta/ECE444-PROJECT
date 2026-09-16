@@ -7,17 +7,16 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 
 ## Team Roles
 
-### Malhotra — Software Lead
-Malhotra is responsible for the architecture decisions on the project, leading the design of the architecture specification, and having final say on all class interfaces. She brings experience in project management,
-frontend and backend development, REST APIs, database management, and Agile development, with strong proficiency in Python, JavaScript, and Git/GitHub.
+### Riana Malhotra — Software Lead, Full Stack Developer
+Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
-- Lead architecture and interface design decisions
-- Assign programming tasks to team members
-- Coordinate milestones and track overall progress
-- Contribute to development, debugging, and presentations
+- Lead software architecture and class/interface design, defining system components, dependencies, and interactions.
+- Assign programming tasks to team members and coordinate development across multiple software components.
+- Contribute to software development, debugging, testing, and integration, including identifying and resolving implementation and interface issues.
+- Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
 
-### Cheralody — Project Manager
+### Ireen Cheralody — Project Manager
 Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
@@ -26,7 +25,7 @@ Duties:
 - Contribute to development, programming, and debugging
 - Support the preparation of presentation material
 
-### Mahrous — Backend & Frontend Developer, UX/UI Designer
+### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
 Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
