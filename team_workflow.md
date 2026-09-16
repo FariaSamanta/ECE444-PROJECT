@@ -103,9 +103,9 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
 
-The table will be updated as the project schedule and team responsibilities change.
+Writing, editing, and rewriting responsibilities will rotate across milestones to ensure that all team members contribute fairly and approximately equally to each communication role throughout the course.
 
 ## Conflict Resolution 
 
@@ -131,4 +131,12 @@ Members who consistently go beyond their assigned responsibilities, help teammat
 ## Agreement
 
 By contributing to the project, each team member agrees to follow this workflow, communicate responsibly, contribute fairly, and participate in writing, editing, rewriting, and presenting project deliverables.
+
+## Workflow Updates
+
+This workflow will be updated whenever team roles, responsibilities, meeting arrangements, communication methods, or other team processes change. All substantive updates will be discussed with the team and recorded below.
+
+| Date               | Update                                                                                                                      | Approved By      |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| September 16, 2026 | Initial workflow finalized and team roles, coordination procedures, technical ownership, and task responsibilities updated. | All team members |
 
