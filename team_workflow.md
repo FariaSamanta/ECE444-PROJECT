@@ -20,6 +20,7 @@ Duties:
 
 ### Ireen Cheralody — Project Manager
 **Email:**
+
 Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
