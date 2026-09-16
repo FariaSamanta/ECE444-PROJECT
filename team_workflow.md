@@ -40,18 +40,12 @@ Faria Samanta Akbar contributes to the development of the project’s AI/ML func
 
 Duties:
 
-- Design, develop, integrate, and evaluate AI/ML components required by the project.
-- Develop backend services, APIs, data-processing pipelines, and application logic.
-- Contribute to frontend implementation and integration of user-facing features.
-- Connect frontend components with backend services, APIs, databases, and AI functionality.
-- Implement validation, error handling, fallback behaviour, and safeguards around AI-generated outputs.
-- Assist with database design, storage, retrieval, and data-flow integration.
-- Contribute to system scalability, performance, and reliability, including asynchronous processing, caching, background tasks, and API efficiency where applicable.
-- Support deployment, CI/CD, containerization, monitoring, and other DevOps-related tasks.
-- Develop and execute unit, integration, and system-level tests for assigned components.
-- Evaluate AI outputs for correctness, reliability, edge cases, and failure conditions.
-- Participate in code reviews, debugging, software integration, architectural discussions, and technical documentation.
-- Research relevant AI and software technologies and help evaluate engineering trade-offs before major implementation decisions are made.
+- Design, develop, integrate, and evaluate AI/ML components, including AI-output validation, safeguards, and reliability testing.
+- Develop backend services, REST APIs, data-processing pipelines, database functionality, and core application logic.
+- Contribute to frontend development and connect user-facing components with backend services, databases, APIs, and AI functionality.
+- Support testing, debugging, code review, scalability, performance, deployment, CI/CD, containerization, and monitoring.
+- Contribute to software architecture, technical research, engineering trade-off analysis, and project documentation.
+
 
 ### Technical Ownership and Cross-Functional Development
 
