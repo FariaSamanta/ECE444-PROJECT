@@ -34,6 +34,26 @@ Duties:
 - Contribute to development and testing across the stack
 - Assist with debugging, code review, and milestone documentation
 
+### Faria Samanta Akbar — AI/ML Developer, Backend & Frontend Developer
+
+Faria Samanta Akbar contributes to the development of the project’s AI/ML functionality while also working across the backend and frontend of the application. She brings experience in Python, C/C++, machine learning, computer vision, AI model development and evaluation, data-processing pipelines, API integration, Git/GitHub, software debugging, and technical experimentation. She will also contribute substantially to frontend development throughout the project in order to strengthen her experience building complete user-facing software systems.
+
+Duties:
+
+- Design, develop, integrate, and evaluate AI/ML components required by the project.
+- Develop backend services, APIs, data-processing pipelines, and application logic.
+- Contribute to frontend implementation and integration of user-facing features.
+- Connect frontend components with backend services, APIs, databases, and AI functionality.
+- Implement validation, error handling, fallback behaviour, and safeguards around AI-generated outputs.
+- Assist with database design, storage, retrieval, and data-flow integration.
+- Contribute to system scalability, performance, and reliability, including asynchronous processing, caching, background tasks, and API efficiency where applicable.
+- Support deployment, CI/CD, containerization, monitoring, and other DevOps-related tasks.
+- Develop and execute unit, integration, and system-level tests for assigned components.
+- Evaluate AI outputs for correctness, reliability, edge cases, and failure conditions.
+- Participate in code reviews, debugging, software integration, architectural discussions, and technical documentation.
+- Research relevant AI and software technologies and help evaluate engineering trade-offs before major implementation decisions are made.
+
+
 ### Shared Responsibilities
 Regardless of role, every member will:
 - Complete assigned work by the agreed deadline.
@@ -76,6 +96,16 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 | Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous | Karen Mahrous | | All |
 
 The table will be updated as the project schedule and team responsibilities change.
+
+### Technical Ownership and Cross-Functional Development
+
+Primary roles establish ownership and accountability but do not restrict members from contributing outside their assigned areas. The team intends to develop the project as a maintainable and scalable software system; therefore, members will collaborate across frontend development, backend development, AI/ML integration, database design, testing, security, deployment, and documentation.
+
+Major technical decisions affecting system architecture, scalability, security, APIs, database schemas, or interfaces between components will be reviewed by at least two team members before implementation. No critical software component will have only one team member familiar with its implementation.
+
+Code changes will be reviewed through GitHub pull requests before being merged into the main development branch. Automated tests and continuous-integration checks will be introduced where appropriate as the project evolves.
+
+The team will prioritize modular design, documented interfaces, testability, maintainability, security, and scalability so that the completed application can continue to be developed and deployed beyond the scope of ECE444.
 
 ## Conflict Resolution 
 
