@@ -92,7 +92,7 @@ Programming and project tasks may be proposed or assigned by any team member bas
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
 ### Meeting Minutes
-The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. TThe document will be named Meeting_Minutes.docx and will be stored in the group’s shared OneDrive folder.
+The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. The document will be named Meeting_Minutes.docx and will be stored in the group’s shared OneDrive folder.
 
 The folder can be accessed [here](https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly)
 
