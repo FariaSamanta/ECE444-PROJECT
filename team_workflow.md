@@ -61,7 +61,7 @@ No member will be responsible exclusively for writing, editing, or presenting. T
 ### Meeting Minutes
 The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. The document’s name will be “ Meeting_Minutes.docx”, and available in the group’s shared OneDrive folder.
 
-The folder can be accessed here: [https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly](https://shorturl.at/qw8fU)
+The folder can be accessed [here] (https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly)(https://shorturl.at/qw8fU)
 
 ### Communication
 Instagram will be the team’s primary communication channel outside meetings. Members should check it regularly and respond to messages within 24 hours. Zoom calls will be used for online meetings. For urgent issues or communication failures, email will be used, with responses expected within 24 hours.
