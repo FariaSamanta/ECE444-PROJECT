@@ -8,7 +8,7 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 ## Team Roles
 
 ### Riana Malhotra — Software Lead, Full Stack Developer
-**Email:**
+**Email:** riana.malhotra@mail.utoronto.ca
 
 Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
