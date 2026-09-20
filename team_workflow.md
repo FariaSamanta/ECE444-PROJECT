@@ -7,17 +7,21 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 
 ## Team Roles
 
-### Malhotra — Software Lead
-Malhotra is responsible for the architecture decisions on the project, leading the design of the architecture specification, and having final say on all class interfaces. She brings experience in project management,
-frontend and backend development, REST APIs, database management, and Agile development, with strong proficiency in Python, JavaScript, and Git/GitHub.
+### Riana Malhotra — Software Lead, Full Stack Developer
+**Email:** riana.malhotra@mail.utoronto.ca
+
+Riana Malhotra is responsible for the project architecture, leading the development of the architecture specification and defining class interfaces, system components, and overall system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
-- Lead architecture and interface design decisions
-- Assign programming tasks to team members
-- Coordinate milestones and track overall progress
-- Contribute to development, debugging, and presentations
+- Lead software architecture and class/interface design, defining system components, dependencies, and interactions.
+- Assign programming tasks to team members and coordinate development across multiple software components.
+- Contribute to software development, debugging, testing, and integration while identifying and resolving implementation and interface issues.
+- Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
 
-### Cheralody — Project Manager
+
+### Ireen Cheralody — Project Manager
+**Email:** ireen.cheralody@mail.utoronto.ca
+
 Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
@@ -26,7 +30,9 @@ Duties:
 - Contribute to development, programming, and debugging
 - Support the preparation of presentation material
 
-### Mahrous — Backend & Frontend Developer, UX/UI Designer
+### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
+**Email:**
+
 Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
@@ -34,6 +40,30 @@ Duties:
 - Troubleshoot UX issues in collaboration with the development team
 - Contribute to development and testing across the stack
 - Assist with debugging, code review, and milestone documentation
+
+### Faria Samanta Akbar — AI/ML Developer, Backend & Frontend Developer
+**Email:** faria.akbar@mail.utoronto.ca
+
+Faria Samanta Akbar contributes to the development of the project’s AI/ML functionality while also working across the backend and frontend of the application. She brings experience in Python, C/C++, machine learning, computer vision, AI model development and evaluation, data-processing pipelines, API integration, Git/GitHub, software debugging, and technical experimentation. She will also contribute substantially to frontend development throughout the project in order to strengthen her experience building complete user-facing software systems.
+
+Duties:
+
+- Design, develop, integrate, and evaluate AI/ML components, including AI-output validation, safeguards, and reliability testing.
+- Develop backend services, REST APIs, data-processing pipelines, database functionality, and core application logic.
+- Contribute to frontend development and connect user-facing components with backend services, databases, APIs, and AI functionality.
+- Support testing, debugging, code review, scalability, performance, deployment, CI/CD, containerization, and monitoring.
+- Contribute to software architecture, technical research, engineering trade-off analysis, and project documentation.
+
+
+### Technical Ownership and Cross-Functional Development
+
+Primary roles establish ownership and accountability but do not restrict members from contributing outside their assigned areas. The team intends to develop the project as a maintainable and scalable software system; therefore, members will collaborate across frontend development, backend development, AI/ML integration, database design, testing, security, deployment, and documentation.
+
+Major technical decisions affecting system architecture, scalability, security, APIs, database schemas, or interfaces between components will be reviewed by at least two team members before implementation. No critical software component will have only one team member familiar with its implementation.
+
+Code changes will be reviewed through GitHub pull requests before being merged into the main development branch. Automated tests and continuous-integration checks will be introduced where appropriate as the project evolves.
+
+The team will prioritize modular design, documented interfaces, testability, maintainability, security, and scalability so that the completed application can continue to be developed and deployed beyond the scope of ECE444.
 
 ### Shared Responsibilities
 Regardless of role, every member will:
@@ -47,36 +77,39 @@ Regardless of role, every member will:
 
 No member will be responsible exclusively for writing, editing, or presenting. These responsibilities will be distributed across the team.
 
+Programming and project tasks may be proposed or assigned by any team member based on the current milestone, technical needs, and team availability. Final task ownership will be agreed upon collaboratively during planning meetings or through the team’s communication channel.
+
+
 ## Coordination
 
 ### Meeting Times
 **Planning Tool:** [www.when2meet.com](https://www.when2meet.com/?38536831-BD2Nx)
 
 ### Proposed Arrangements
-- **Sprint Planning (every other week):** Tuesday 12-1 PM EST
-- **Backlog Grooming (every other week):** Friday 5-6 PM EST 
-- **Synchronous Stand-up:** Sunday 6-8 PM EST
-- **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM EST
+- **Sprint Planning (every other week):** Tuesday 12-1 PM ET
+- **Backlog Grooming (every other week):** Friday 5-6 PM ET 
+- **Synchronous Stand-up:** Sunday 6-8 PM ET
+- **Asynchronous Stand-up:** Post updates on Wednesday at 12 PM ET
 - **Milestone Retrospective:** Ad hoc, scheduled as necessary
 
 ### Meeting Minutes
-The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. The document’s name will be “ Meeting_Minutes.docx”, and available in the group’s shared OneDrive folder.
+The team will use a OneDrive word document to record all meeting minutes. Every meeting, a different member will be in charge of the notetaking. The document will be named Meeting_Minutes.docx and will be stored in the group’s shared OneDrive folder.
 
-The folder can be accessed here: [https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly](https://shorturl.at/qw8fU)
+The folder can be accessed [here](https://utoronto-my.sharepoint.com/:f:/g/personal/ireen_cheralody_mail_utoronto_ca/IgD9riJYMg93S52albQ_0xj7AaoFHPXiZcqpjRQv2pKSAjI?e=yThuly)
 
 ### Communication
 Instagram will be the team’s primary communication channel outside meetings. Members should check it regularly and respond to messages within 24 hours. Zoom calls will be used for online meetings. For urgent issues or communication failures, email will be used, with responses expected within 24 hours.
 
 ### File Sharing
-The group’s project codebase will be stored in a centralized GitHub repo and shared with all members of the group. Other documents will be shared on OneDrive Folder 
+The group’s project codebase will be stored in a centralized GitHub repo and shared with all members of the group. Other project documents will be stored in the team’s shared OneDrive folder. 
 
 ### Task Table
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous | Karen Mahrous | | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
 
-The table will be updated as the project schedule and team responsibilities change.
+Writing, editing, and rewriting responsibilities will rotate across milestones to ensure that all team members contribute fairly and approximately equally to each communication role throughout the course.
 
 ## Conflict Resolution 
 
@@ -102,4 +135,12 @@ Members who consistently go beyond their assigned responsibilities, help teammat
 ## Agreement
 
 By contributing to the project, each team member agrees to follow this workflow, communicate responsibly, contribute fairly, and participate in writing, editing, rewriting, and presenting project deliverables.
+
+## Workflow Updates
+
+This workflow will be updated whenever team roles, responsibilities, meeting arrangements, communication methods, or other team processes change. All substantive updates will be discussed with the team and recorded below.
+
+| Date               | Update                                                                                                                      | Approved By      |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| September 16, 2026 | Initial workflow finalized and team roles, coordination procedures, technical ownership, and task responsibilities updated. | All team members |
 
