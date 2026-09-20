@@ -1,8 +1,8 @@
-Title: [Ash Detectives🔥] Workflow
-Date: [Insert date of finalization]
+Title: Ash Detectives🔥 
+Date: 20/09/2026
 
 ## Preamble 
-The following is the workflow document for ECE444 Team [Team Name]. All team members have reviewed and agreed to the workflow described in this document. The team has discussed individual grade expectations and commitment levels for this course, and each member has agreed to dedicate the necessary time and effort accordingly. All team members have also
+The following is the workflow document for ECE444 Team Ash Detectives🔥.  All team members have reviewed and agreed to the workflow described in this document. The team has discussed individual grade expectations and commitment levels for this course, and each member has agreed to dedicate the necessary time and effort accordingly. All team members have also
 reviewed and agreed to follow the course writing guidelines and will apply them to all communication pieces for this course.
 
 ## Team Roles
