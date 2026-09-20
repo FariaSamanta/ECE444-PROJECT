@@ -10,13 +10,14 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 ### Riana Malhotra — Software Lead, Full Stack Developer
 **Email:** riana.malhotra@mail.utoronto.ca
 
-Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
+Riana Malhotra is responsible for the project architecture, leading the development of the architecture specification and defining class interfaces, system components, and overall system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
 - Lead software architecture and class/interface design, defining system components, dependencies, and interactions.
 - Assign programming tasks to team members and coordinate development across multiple software components.
-- Contribute to software development, debugging, testing, and integration, including identifying and resolving implementation and interface issues.
+- Contribute to software development, debugging, testing, and integration while identifying and resolving implementation and interface issues.
 - Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
+
 
 ### Ireen Cheralody — Project Manager
 **Email:** ireen.cheralody@mail.utoronto.ca
