@@ -107,7 +107,7 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
 
 Writing, editing, and rewriting responsibilities will rotate across milestones to ensure that all team members contribute fairly and approximately equally to each communication role throughout the course.
 
