@@ -1,4 +1,4 @@
-# Ash Detectives🔥 
+# Team Ash Detectives🔥 
 ### Date: 20/09/2026
 
 ## Preamble 
