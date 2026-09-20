@@ -19,7 +19,7 @@ Duties:
 - Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
 
 
-### Ireen Cheralody — Project Manager
+### Ireen Cheralody — Project Manager, AI/ML Developer, Full Stack Developer
 **Email:** ireen.cheralody@mail.utoronto.ca
 
 Ireen Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
