@@ -31,7 +31,7 @@ Duties:
 - Support the preparation of presentation material
 
 ### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
-**Email:**
+**Email:** karen.mahrous@mail.utoronto.ca
 
 Karen Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
