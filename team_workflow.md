@@ -22,7 +22,7 @@ Duties:
 ### Ireen Cheralody — Project Manager
 **Email:** ireen.cheralody@mail.utoronto.ca
 
-Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
+Ireen Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
 - Create and manage milestone deadlines and workflow breakdowns
@@ -33,7 +33,7 @@ Duties:
 ### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
 **Email:**
 
-Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
+Karen Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
 - Design UI mockups, prototypes, and visual assets for the application
