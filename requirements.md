@@ -16,6 +16,8 @@
 - **Needs:** Localized wildfire risk information and visualizations that can support situational awareness and planning.
 - **Evidence:** The platform will provide geospatial risk heatmaps, potential fire detections, environmental conditions, and historical observations.
 
+## Initial Scope
+
 
 ## Questions to Clarify
 
