@@ -1,6 +1,7 @@
 # Requirements
 
 ## Project Goal
+Wildfires in at-risk regions are often detected too late; existing monitoring relies on delayed satellite passes, manual observation, or public reporting, giving communities and responders little lead time to act. Team Ash Detectives is building a wildfire early-detection and risk-monitoring platform that applies AI/computer vision to satellite and geospatial data to flag emerging fire risk sooner. Beyond detecting active fires, the platform will use AI to predict wildfire risk by analyzing contributing factors such as vegetation dryness, fuel density, terrain, and weather conditions. 
 
 ## Stakeholders
 
