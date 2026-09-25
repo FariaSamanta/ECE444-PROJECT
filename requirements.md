@@ -75,6 +75,11 @@ Wildfires in at-risk regions are often detected too late; existing monitoring re
 - Report appropriate metrics such as precision, recall, false-positive rate, and detection confidence.
 - Compare model predictions against historical observations to identify strengths and limitations.
 
+#### 8. Backend and Data Infrastructure
+   - REST APIs for communication between the frontend and backend.
+   - SQL database for storing wildfire observations, environmental data, and system results.
+   - Data processing pipelines for external wildfire and environmental datasets.
+
 ### Features expected to be deferred
 
 The following features may be considered for future development if time and resources permit, but will not be required for the initial semester implementation:
