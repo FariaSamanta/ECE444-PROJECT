@@ -21,7 +21,7 @@ Wildfires in at-risk regions are often detected too late; existing monitoring re
 
 ### Scope Statement
 
-> For the semester, Team Ash Detectives will focus on developing a prototype wildfire monitoring platform that combines satellite/geospatial data, environmental conditions, and AI-based analysis to detect potential wildfire activity and visualize wildfire risk. The core system will provide an interactive map, wildfire detections, risk heatmaps, fire progression visualization, historical replay, and simulated early-warning alerts. The team will evaluate its detection and risk models using historical wildfire data. Advanced capabilities such as fully real-time raw satellite-image processing, precise fire-spread forecasting, direct emergency-service integration, global deployment, and automated emergency notifications will be deferred to keep the project feasible within the semester.
+> For the semester, Team Ash Detectives will focus on developing a prototype wildfire monitoring platform that combines satellite/geospatial data, environmental conditions, and AI-based analysis to detect potential wildfire activity and visualize wildfire risk. The core system will provide an interactive map, wildfire detections, risk heatmaps, fire progression visualization, and simulated early-warning alerts. The team will evaluate its detection and risk models using historical wildfire data. Advanced capabilities such as fully real-time raw satellite-image processing, precise fire-spread forecasting, direct emergency-service integration, global deployment, and automated emergency notifications will be deferred to keep the project feasible within the semester.
 
 ### Features Planned for This Semester
 
@@ -67,7 +67,7 @@ Wildfires in at-risk regions are often detected too late; existing monitoring re
 
 The following features may be considered for future development if time and resources permit, but will not be required for the initial semester implementation:
 
-- **Fully real-time satellite imagery processing: ** Processing raw satellite imagery continuously as soon as it becomes available may require significant computational resources and specialized infrastructure.
+- **Fully real-time satellite imagery processing:** Processing raw satellite imagery continuously as soon as it becomes available may require significant computational resources and specialized infrastructure.
 - **High-resolution satellite computer vision:** Using very high-resolution imagery to directly identify fire or smoke could be explored later depending on data availability, licensing, and computational requirements.
 - **Advanced wildfire spread prediction:** Predicting the exact future boundaries or trajectory of a wildfire would require more sophisticated physical and environmental modeling than the initial semester scope.
 - **Automated emergency-service integration:** Direct integration with municipal emergency-management systems, dispatch systems, or public alert infrastructure will be deferred.
