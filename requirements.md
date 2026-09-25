@@ -8,7 +8,7 @@ Wildfires in at-risk regions are often detected too late; existing monitoring re
 ### General Public
 - **Needs:** An understandable view of wildfire locations and general risk conditions.
 - **Evidence:** A simplified version of the interactive map could improve public situational awareness without requiring users to interpret raw satellite or environmental datasets.
-- 
+  
 ### Emergency Management Organizations
 - **Needs:** Timely information about potential wildfire activity, risk levels, affected areas, and fire progression.
 - **Evidence:** These organizations may need to combine information from multiple sources when monitoring developing wildfire situations. Our platform aims to consolidate relevant data into a single dashboard.
@@ -16,6 +16,18 @@ Wildfires in at-risk regions are often detected too late; existing monitoring re
 ### Municipalities and Local Authorities
 - **Needs:** Localized wildfire risk information and visualizations that can support situational awareness and planning.
 - **Evidence:** The platform will provide geospatial risk heatmaps, potential fire detections, environmental conditions, and historical observations.
+
+### Environmental Researchers
+- **Needs:** Access to historical wildfire observations, environmental conditions, satellite imagery, and model outputs for analysis.
+- **Evidence:** The system will store observations over time and support historical wildfire event analysis and model evaluation.
+
+### Organizations Monitoring Wildfire Activity
+- **Needs:** A centralized way to monitor potential fire activity and changes in wildfire conditions.
+- **Evidence:** The proposed system combines satellite observations, environmental data, risk predictions, and fire progression tracking.
+
+### Development Team
+- **Needs:** A realistic software engineering project that allows the team to practice full-stack development, AI/ML, APIs, databases, and collaborative development.
+- **Evidence:** The project will involve React/TypeScript, Python/Flask, REST APIs, SQL, AI/ML libraries, geospatial visualization, and Git/GitHub.
 
 ## Initial Scope
 
