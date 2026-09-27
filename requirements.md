@@ -72,17 +72,21 @@ The objective is not to replace emergency-management systems or professional wil
 
 ## Primary Users
 
-For the initial semester implementation, the primary users will be emergency-management personnel, municipalities, and organizations monitoring wildfire activity.
+For the initial semester implementation, the primary users will be emergency-management organizations, municipalities and local authorities, electric utilities, and organizations responsible for monitoring wildfire activity.
 
-The general public and environmental researchers will be treated as secondary users.
+These users are most likely to require timely wildfire detections, localized risk information, environmental context, and geospatial visualizations to support monitoring and operational decision-making.
+
+Insurance and reinsurance companies, environmental researchers, forestry and land-management organizations, critical-infrastructure operators, and the general public will be treated as secondary users for the initial implementation.
 
 The application interface will therefore prioritize:
 
 * rapid interpretation of wildfire detections,
 * geographic risk visualization,
 * access to supporting environmental information,
+* infrastructure or regional risk awareness where applicable,
 * historical comparison,
 * and clear indication of model confidence and uncertainty.
+
 
 ## Initial Scope
 
