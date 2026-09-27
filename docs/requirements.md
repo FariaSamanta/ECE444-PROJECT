@@ -94,7 +94,7 @@ The application interface will therefore prioritize:
 
 > For the semester, Team Ash Detectives will focus on developing a prototype wildfire monitoring platform that combines satellite/geospatial data, environmental conditions, and AI-based analysis to detect potential wildfire activity and visualize wildfire risk. The core system will provide an interactive map, wildfire detections, risk heatmaps, fire progression visualization, and simulated early-warning alerts. The team will evaluate its detection and risk models using historical wildfire data. Advanced capabilities such as fully real-time raw satellite-image processing, precise fire-spread forecasting, direct emergency-service integration, global deployment, and automated emergency notifications will be deferred to keep the project feasible within the semester.
 
-## System Boundaries
+### System Boundaries
 
 The system will operate as a monitoring and decision-support platform rather than an emergency-response or dispatch system.
 
@@ -160,74 +160,74 @@ For the initial implementation:
 * SQL database for storing wildfire observations, environmental data, and system results.
 * Data processing pipelines for external wildfire and environmental datasets.
 
-## AI-Specific Features
+### AI-Specific Features
 
 The system will use AI/ML in multiple parts of the wildfire-monitoring workflow.
 
-### Wildfire Detection
+#### Wildfire Detection
 
 A baseline machine-learning or computer-vision model will be used to classify observations or imagery associated with potential wildfire activity.
 
-### Wildfire Risk Estimation
+#### Wildfire Risk Estimation
 
 A predictive model will combine environmental variables such as temperature, vegetation/fuel conditions, wind, terrain, and historical wildfire observations to estimate relative wildfire risk.
 
-### Confidence and Uncertainty Reporting
+#### Confidence and Uncertainty Reporting
 
 Model outputs will include confidence scores or uncertainty indicators so that users can distinguish between stronger and weaker predictions.
 
-### AI-Assisted Explanation
+#### AI-Assisted Explanation
 
 Where feasible, the system will generate a short explanation of the main factors contributing to a wildfire-risk prediction, such as elevated temperature, dry vegetation, or high wind conditions.
 
-### Model Verification
+#### Model Verification
 
 AI-generated results will be compared with historical wildfire observations and evaluated using quantitative metrics before being presented as reliable system outputs.
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
-### Performance
+#### Performance
 
 * The interactive map should load and respond to user interactions within a reasonable time under normal usage.
 * API requests for stored wildfire observations and environmental information should return without unnecessary delay.
 * Expensive AI or geospatial processing tasks should be performed asynchronously where appropriate.
 
-### Scalability
+#### Scalability
 
 * The backend should support adding additional geographic regions without requiring major architectural changes.
 * Data-processing components should be modular so that additional wildfire, weather, or satellite data sources can be integrated later.
 * The application architecture should support increasing numbers of users, observations, and geographic regions through horizontal scaling where appropriate.
 
-### Reliability
+#### Reliability
 
 * Failures in one external data source should not cause the entire application to become unavailable.
 * Missing or unavailable environmental data should be clearly indicated rather than silently replaced with fabricated values.
 * Model and API failures should be handled gracefully.
 
-### Maintainability
+#### Maintainability
 
 * Frontend, backend, AI/ML, and data-processing components should have clearly defined interfaces.
 * Code should be modular and documented.
 * Automated tests should be used for critical functionality.
 
-### Usability
+#### Usability
 
 * Wildfire risk information should be understandable without requiring specialist knowledge of satellite or geospatial datasets.
 * Risk levels, confidence values, and environmental conditions should be clearly labelled.
 
-### Security
+#### Security
 
 * API endpoints should validate incoming requests.
 * Authentication and authorization should be implemented for functionality requiring restricted access.
 * Sensitive configuration values such as API keys should not be exposed in source code or frontend code.
 * External data should be validated before being stored or processed.
 
-### Privacy
+#### Privacy
 
 * The initial platform will avoid collecting unnecessary personal information.
 * If user accounts are introduced, only information required for system functionality will be stored.
 
-## Safety and AI Guardrails
+### Safety and AI Guardrails
 
 Because wildfire monitoring may influence how users interpret emergency conditions, the system will include safeguards around AI-generated outputs.
 
