@@ -44,6 +44,32 @@ The objective is not to replace emergency-management systems or professional wil
 * **Needs:** A realistic software engineering project that allows the team to practice full-stack development, AI/ML, APIs, databases, and collaborative development.
 * **Evidence:** The project will involve React/TypeScript, Python/Flask, REST APIs, SQL, AI/ML libraries, geospatial visualization, and Git/GitHub.
 
+### Electric Utilities and Transmission/Distribution Operators
+
+* **Needs:** Localized wildfire-risk information around transmission lines, substations, and other electrical infrastructure to support preventive maintenance, situational awareness, vegetation management, and operational decisions during extreme fire conditions.
+* **Evidence:** Utilities already combine weather observations, fuel conditions, cameras, sensors, and wildfire-risk models to reduce ignition risk and determine when additional mitigation measures may be necessary. The proposed platform could provide an additional geospatial risk layer that helps identify infrastructure located within elevated-risk areas.
+
+### Insurance and Reinsurance Companies
+
+* **Needs:** Wildfire-risk information that can help evaluate geographic exposure, understand portfolio risk, monitor active wildfire threats, and prioritize areas requiring closer assessment.
+* **Evidence:** Insurers already use property-level wildfire intelligence for underwriting, portfolio analysis, and response planning. The platform's historical observations, environmental risk factors, and geographic risk heatmaps could provide an additional source of wildfire-risk information for these workflows.
+
+### Critical Infrastructure Operators
+
+* **Needs:** Early awareness of wildfire activity near critical assets such as telecommunications infrastructure, pipelines, transportation systems, and data centres.
+* **Evidence:** A wildfire-risk platform could allow operators to monitor geographic exposure and identify assets located near emerging wildfire detections or high-risk regions, supporting contingency planning and asset-protection decisions.
+
+### Forestry and Land-Management Organizations
+
+* **Needs:** Information about vegetation conditions, fuel density, historical wildfire activity, and geographic areas experiencing elevated fire risk.
+* **Evidence:** Combining vegetation, terrain, weather, and historical wildfire observations could support prioritization of vegetation management, monitoring, and wildfire-mitigation activities.
+
+### Utility and Public-Safety Regulators
+
+* **Needs:** Reliable wildfire-risk information and historical observations that can support oversight of wildfire-mitigation programs and infrastructure-related wildfire risk.
+* **Evidence:** Regulators in wildfire-prone regions already require utilities to develop wildfire-mitigation plans and report infrastructure-related fire events. Historical risk and detection data from the platform could support analysis and reporting activities.
+
+
 ## Primary Users
 
 For the initial semester implementation, the primary users will be emergency-management personnel, municipalities, and organizations monitoring wildfire activity.
