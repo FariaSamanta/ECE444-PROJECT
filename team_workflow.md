@@ -1,8 +1,8 @@
-Title: [Group2-TeamName] Workflow
-Date: [Insert date of finalization]
+# Team Ash Detectives🔥 
+### Date: 20/09/2026
 
 ## Preamble 
-The following is the workflow document for ECE444 Team [Team Name]. All team members have reviewed and agreed to the workflow described in this document. The team has discussed individual grade expectations and commitment levels for this course, and each member has agreed to dedicate the necessary time and effort accordingly. All team members have also
+The following is the workflow document for ECE444 Team Ash Detectives🔥.  All team members have reviewed and agreed to the workflow described in this document. The team has discussed individual grade expectations and commitment levels for this course, and each member has agreed to dedicate the necessary time and effort accordingly. All team members have also
 reviewed and agreed to follow the course writing guidelines and will apply them to all communication pieces for this course.
 
 ## Team Roles
@@ -10,18 +10,19 @@ reviewed and agreed to follow the course writing guidelines and will apply them 
 ### Riana Malhotra — Software Lead, Full Stack Developer
 **Email:** riana.malhotra@mail.utoronto.ca
 
-Riana Malhotra is responsible for the project architecture, leading the design of the architecture specification and making final decisions on class interfaces and system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
+Riana Malhotra is responsible for the project architecture, leading the development of the architecture specification and defining class interfaces, system components, and overall system structure. She brings experience in C++, Python, JavaScript, REST APIs, database management, Git/GitHub, and Agile software development.
 
 Duties:
 - Lead software architecture and class/interface design, defining system components, dependencies, and interactions.
 - Assign programming tasks to team members and coordinate development across multiple software components.
-- Contribute to software development, debugging, testing, and integration, including identifying and resolving implementation and interface issues.
+- Contribute to software development, debugging, testing, and integration while identifying and resolving implementation and interface issues.
 - Develop and integrate frontend and backend components, REST APIs, and database functionality as required by the project.
 
-### Ireen Cheralody — Project Manager
+
+### Ireen Cheralody — Project Manager, AI/ML Developer, Full Stack Developer
 **Email:** ireen.cheralody@mail.utoronto.ca
 
-Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
+Ireen Cheralody is responsible for assigning tasks, keeping the team on top of deadlines, and compiling information for bi-weekly reports. She brings a strong full-stack background across Python, C/C++, Java, JavaScript, HTML, CSS, and PyTorch, along with experience in UI/UX integration and Agile development.
 
 Duties:
 - Create and manage milestone deadlines and workflow breakdowns
@@ -30,9 +31,9 @@ Duties:
 - Support the preparation of presentation material
 
 ### Karen Mahrous — Backend & Frontend Developer, UX/UI Designer
-**Email:**
+**Email:** karen.mahrous@mail.utoronto.ca
 
-Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
+Karen Mahrous contributes across the stack, from implementing features to verifying their quality, and also leads the visual and interaction design of the application. She brings experience in frontend and backend development, testing and debugging, and UI/UX integration, with proficiency in Python, Java, JavaScript, HTML, CSS, and SQL.
 
 Duties:
 - Design UI mockups, prototypes, and visual assets for the application
@@ -106,7 +107,7 @@ The group’s project codebase will be stored in a centralized GitHub repo and s
 
 | Deliverable |Draft Due|Due|Writers | Editors | Rewriters  | Presenters |
 |---|---|---|---|---|---|---|
-| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
+| Milestone 1 |15/09/2026 |20/09/2026 | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Riana Malhotra, Ireen Cheralody, Karen Mahrous, Faria Samanta Akbar | Faria Samanta Akbar | All |
 
 Writing, editing, and rewriting responsibilities will rotate across milestones to ensure that all team members contribute fairly and approximately equally to each communication role throughout the course.
 
