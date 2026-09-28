@@ -118,7 +118,7 @@ The proposed platform could provide an additional geospatial risk layer that hel
 **Supporting Evidence:**  
 Utility wildfire-mitigation programs in wildfire-prone regions consider factors such as weather, vegetation, infrastructure conditions, and wildfire risk when planning mitigation activities. Regulatory wildfire-mitigation requirements also demonstrate that utilities need information about wildfire conditions surrounding electrical infrastructure.
 
-**Source to include:**  
+**Source:**  
 California Public Utilities Commission — Wildfire Mitigation Plans / Utility Wildfire Mitigation  
 https://www.cpuc.ca.gov/industries-and-topics/wildfires
 
