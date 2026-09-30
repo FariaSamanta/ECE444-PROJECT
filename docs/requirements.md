@@ -157,9 +157,9 @@ The benefit of combining FIRMS observations with our proposed environmental-risk
 ## General Public
 
 **Needs:**  
-An understandable view of wildfire locations and general risk conditions.
+An understandable view of wildfire locations and general risk conditions, and a way to report fires they can see.
 
-A simplified version of the interactive map could improve public situational awareness without requiring users to interpret raw satellite or environmental datasets.
+A simplified, mobile-friendly version of the interactive map could improve public situational awareness without requiring users to interpret raw satellite or environmental datasets. Members of the public may also see fires before satellites detect them, so the platform will let them submit reports through a "Report a Fire" feature.
 
 **Supporting Evidence:**  
 NASA FIRMS provides a publicly accessible interactive map for viewing active fires and thermal anomalies, demonstrating an existing public-facing use case for geographically visualizing wildfire information.
@@ -169,7 +169,7 @@ NASA FIRMS Fire Map
 https://firms.modaps.eosdis.nasa.gov/map/
 
 **Assumption:**  
-The specific needs and preferred presentation format for members of the general public have not yet been validated through user interviews.
+The specific needs and preferred presentation format for members of the general public have not yet been validated through user interviews. We assume most public users will access the platform on mobile devices.
 
 ---
 
@@ -266,10 +266,11 @@ For the semester, Team Ash Detectives will focus on developing a prototype wildf
 
 The core system will provide:
 
-- an interactive map,
+- an interactive, mobile-friendly map,
 - wildfire detections,
 - risk heatmaps,
 - fire-progression visualization,
+- public fire reporting with a fire lifecycle history,
 - and simulated early-warning alerts.
 
 The team will evaluate its detection and risk models using historical wildfire data.
@@ -353,6 +354,15 @@ https://firms.modaps.eosdis.nasa.gov/map/
 - SQL database for storing wildfire observations, environmental data, and system results.
 - Data-processing pipelines for external wildfire and environmental datasets.
 
+## 9. Report a Fire and Fire Lifecycle History
+
+- Provide a "Report a Fire" button that lets any user, including members of the public, report a wildfire they can see, even in areas with no previous fire history.
+- Show reports on the map clearly labelled as unverified and distinct from satellite detections.
+- Allow only authenticated staff users to confirm or reject reports and update a fire's status through stages of control (e.g. Out of Control, Being Held, Under Control, Out).
+- Store every status change as a timestamped record, and move fires into the historical record once marked Out.
+- Make confirmed historical fires available as historical fire activity for the risk model and as events for the Early-Warning Simulation.
+- Reports are never sent to emergency services; the form directs users to call 911 in an emergency.
+
 ---
 
 # AI-Specific Features
@@ -383,8 +393,8 @@ AI-generated results will be compared with historical wildfire observations and 
 
 ## Performance
 
-- The interactive map should load and respond to user interactions within a reasonable time under normal usage.
-- API requests for stored wildfire observations and environmental information should return without unnecessary delay.
+- The interactive map should load and respond quickly on both mobile and desktop. The platform is mobile-first for general-public users, while primary users (emergency-management, municipal, and utility staff) use both desktop and mobile.
+- Measurable targets for load time, interaction response, and API response time are defined in [#9 Responsive Interactive Map Performance](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/9).
 - Expensive AI or geospatial processing tasks should be performed asynchronously where appropriate.
 
 ## Scalability
@@ -409,6 +419,7 @@ AI-generated results will be compared with historical wildfire observations and 
 
 - Wildfire-risk information should be understandable without requiring specialist knowledge of satellite or geospatial datasets.
 - Risk levels, confidence values, and environmental conditions should be clearly labelled.
+- The interface should be usable on phone-sized screens without horizontal scrolling, with map controls and the "Report a Fire" button reachable by touch.
 
 ## Security
 
@@ -416,10 +427,12 @@ AI-generated results will be compared with historical wildfire observations and 
 - Authentication and authorization should be implemented for functionality requiring restricted access.
 - Sensitive configuration values such as API keys should not be exposed in source code or frontend code.
 - External data should be validated before being stored or processed.
+- Public fire reports should be rate-limited per device/IP to reduce spam and abuse.
 
 ## Privacy
 
 - The initial platform will avoid collecting unnecessary personal information.
+- Public fire reports do not require an account or personal details; only the report content, location, and time are stored, plus device/IP information used solely for rate limiting.
 - If user accounts are introduced, only information required for system functionality will be stored.
 
 ---
@@ -432,6 +445,8 @@ Because wildfire-monitoring information may influence how users interpret emerge
 - Detection confidence and uncertainty will be visible to users.
 - Historical or simulated alerts will be clearly distinguished from real emergency alerts.
 - The system will not automatically contact emergency services.
+- Public fire reports will be clearly labelled as unverified until confirmed by staff, and will not be used for model training or evaluation unless confirmed.
+- The "Report a Fire" form will state that it is not an emergency service and direct users to call 911 in an emergency.
 - Users will be informed that model outputs are intended for situational awareness and decision support.
 - Predictions should be supported by observable environmental or satellite data where possible.
 - The system should avoid presenting unsupported explanations or fabricated environmental values.
@@ -482,9 +497,9 @@ The initial implementation will focus on a defined geographic region rather than
 
 Estimating the exact rate and direction of fire spread will be treated as a future enhancement rather than a core requirement.
 
-## Public Reporting
+## Direct Emergency Notification from Public Reports
 
-Allowing users to submit and verify wildfire reports could be considered in a future version but is outside the initial detection and monitoring workflow.
+Public fire reporting is in scope via the "Report a Fire" feature (Feature 9), but reports are only stored and displayed on the platform. Automatically forwarding reports to fire services, 911, or public-alert systems is deferred.
 
 ---
 
@@ -500,9 +515,12 @@ For each observation or model output, the system should record where appropriate
 - data retrieval time,
 - model version,
 - prediction confidence,
-- and relevant environmental inputs.
+- relevant environmental inputs,
+- and entry source (satellite detection, public report, or staff update) with the updating staff user where applicable.
 
 This will allow users and developers to trace how a wildfire detection or risk prediction was produced and support debugging, model evaluation, and reproducibility.
+
+All timestamps will be stored in UTC and displayed in the user's local time zone with the zone labelled. NASA FIRMS acquisition times are provided in UTC; other sources will be converted on import.
 
 NASA FIRMS is currently being considered as a primary wildfire-observation source. FIRMS provides MODIS, VIIRS, and Landsat active-fire products through downloadable files and web services.
 
@@ -593,6 +611,20 @@ This section will be updated after user-story selection and review, as required 
 
 ---
 
+## Question 9: Where will reference start times for historical fire events come from?
+
+**How to clarify:**  
+Compare official agency fire records (e.g. the Canadian National Fire Database and provincial fire records) for coverage in our chosen region and whether they record start dates or exact times.
+
+---
+
+## Question 10: How will staff review public fire reports in practice?
+
+**How to clarify:**  
+Ask a municipal or emergency-management contact how public reports are currently handled, and test the review workflow with the team during the prototype.
+
+---
+
 # Current Assumptions
 
 The following requirements have not yet been fully validated and should therefore be treated as assumptions:
@@ -603,5 +635,8 @@ The following requirements have not yet been fully validated and should therefor
 - Infrastructure overlays would be useful to electric utilities.
 - Users will benefit from explanations of the environmental factors contributing to model predictions.
 - Historical wildfire events can provide suitable data for demonstrating and evaluating the early-warning workflow.
+- Members of the public will use a "Report a Fire" feature to report fires, and genuine reports will outweigh false or duplicate ones.
+- Most general-public users will access the platform on mobile devices.
+- At least one historical fire event in our chosen region has complete enough data to demonstrate the early-warning workflow.
 
 These assumptions will be refined through dataset investigation, technical prototyping, requirements discussions, user-story review, and stakeholder/user feedback where feasible.
