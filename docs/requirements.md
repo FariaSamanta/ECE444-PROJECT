@@ -640,3 +640,201 @@ The following requirements have not yet been fully validated and should therefor
 - At least one historical fire event in our chosen region has complete enough data to demonstrate the early-warning workflow.
 
 These assumptions will be refined through dataset investigation, technical prototyping, requirements discussions, user-story review, and stakeholder/user feedback where feasible.
+
+# Selected Candidate Requirements
+
+## Functional Requirements
+
+### #13 – Report a Fire – Fire Entry and Fire Lifecycle History
+
+**Source:** [GitHub Issue #13](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/13)
+
+**Priority:** High
+
+#### User Story
+
+As a member of the public in a local community, I want to use a "Report a Fire" button to report a wildfire I can see, even in a place where fires have never happened before, so that the fire appears on the platform when satellites may not have detected it yet, and becomes part of the historical record once it ends.
+
+#### Source and Rationale
+
+The General Public is identified in the project requirements as a stakeholder group that needs an understandable view of wildfire locations. The Problem Statement also notes that existing wildfire monitoring relies partly on public reporting and that satellite detection can be delayed by revisit times, cloud, or smoke. As a result, people on the ground may observe a wildfire before it is detected by satellite.
+
+The feature also supports two Initial Success Criteria: storing and retrieving historical wildfire observations and demonstrating the system using at least one historical wildfire event. Once a reported fire ends, it becomes part of the historical wildfire record.
+
+Public reporting is also valuable for fires occurring in locations with little or no recorded fire history. Because historical fire activity is an input to the wildfire-risk model, such locations may initially receive a low predicted risk. Confirmed public reports provide additional historical information showing that the area can experience wildfire activity.
+
+Canadian provinces already provide mechanisms for members of the public to report wildfires, and Canadian fire agencies track fires through stages of control. The proposed fire lifecycle follows this general approach.
+
+The system will not automatically contact emergency services. Reports are stored and displayed within the platform and are not sent to fire services or 911.
+
+Only confirmed public reports are included in historical fire activity data used by the wildfire-risk heatmap. Unverified and rejected reports are excluded. Confirmed reports retain their `public report` source tag so that they can be distinguished from satellite detections.
+
+#### Acceptance Criteria
+
+#### Reporting a Fire
+
+1. Any user, whether logged in or not, can see a **Report a Fire** button on the map page.
+
+2. The report form collects:
+   - Location
+   - Time observed
+   - What the user observed: flames, smoke, or both
+   - An optional description of up to 500 characters
+
+3. The user can provide the fire location by either:
+   - Selecting **Use my current location**, or
+   - Selecting a point on the map or entering coordinates.
+
+4. **Use my current location** uses the browser's location permission request.
+
+5. If location permission is denied, location is unavailable, or reported accuracy is worse than 1 km, the system asks the user to select the location manually on the map. The report can still be submitted.
+
+6. Only the reported fire location is stored. The user's ongoing location is not stored.
+
+7. Before submission, the system displays a prominent warning:
+
+   **"This is not an emergency service. If there is immediate danger, call 911."**
+
+8. After submission, the user receives confirmation that the report was received and that it was not sent to emergency services.
+
+9. A report can be submitted regardless of the area's previous fire history or current predicted risk level, including areas with no previous recorded fires or a **Low** risk rating.
+
+#### Storage and Display
+
+10. Each report is stored in the database with:
+    - `source = public report`
+    - `status = Unverified`
+    - Submission time
+
+11. The report appears on the map within **5 seconds**, measured using the test environments defined by Issue #9. It is displayed using a label and icon that clearly distinguish it from satellite detections and confirmed fires, such as **Unverified public report**.
+
+12. User-provided descriptions are displayed as plain text. HTML and scripts are escaped, and links are not clickable.
+
+#### Validation and Abuse Cases
+
+13. A report is rejected with a clear error message if:
+    - Its location is outside the supported region.
+    - Its observation time is in the future.
+    - A required field is missing.
+
+14. Rate limiting is applied as follows:
+    - Maximum **5 reports per hour per device**, identified using a browser token.
+    - Maximum **30 reports per hour per IP address**.
+    - Attempts exceeding these limits are blocked and are not stored.
+
+15. If the database is unavailable, the user receives an error message and no partial report is stored.
+
+#### Duplicate Reports
+
+16. If a new report is within **2 km and 24 hours** of an existing report or satellite detection, it is linked to the existing fire rather than creating a separate fire.
+
+17. Duplicate detection runs on the server at save time within the same database transaction as the save. If two reports for the same fire are submitted simultaneously, they are linked to one fire rather than creating two separate fires.
+
+#### Status Updates and History
+
+18. Only logged-in staff users can change a report's status to:
+    - Confirmed
+    - Rejected
+    - Out of Control
+    - Being Held
+    - Under Control
+    - Out
+
+    Public users cannot edit or delete submitted reports.
+
+19. When a report is marked **Rejected**, it is immediately removed from the public map but remains in the database with its rejection time and the staff user responsible for the rejection for auditing purposes.
+
+20. Each status change is stored as a new timestamped record. Previous statuses are not overwritten.
+
+21. When a fire is marked **Out**, it is no longer displayed as an active fire on the map but remains in the database and appears in the historical view with its complete timeline, including:
+    - Report time
+    - Status changes
+    - End time
+
+22. Historical fires from both public reports and satellite detections can be searched by date range and geographic area.
+
+#### Historical Data and Risk Model
+
+23. Only **Confirmed** public reports are included in the historical fire activity data available to the Wildfire Risk Heatmap (#3).
+
+24. **Unverified** and **Rejected** public reports are excluded from the historical fire activity data used by the risk model.
+
+25. Confirmed reports retain `source = public report` in the historical dataset so that the risk model and its evaluation can include, exclude, or weight public reports separately from satellite detections.
+
+### Verification
+
+The requirement will be verified by:
+
+- Submitting a report as a logged-out user and confirming that the 911 warning appears, the report is stored as `Unverified` with the correct provenance, and it appears on the map with an **Unverified** label within 5 seconds.
+- Denying browser location permission and confirming that the user can still report a fire by selecting a location on the map.
+- Submitting a description containing HTML, scripts, and a link and confirming that the content is displayed only as plain text.
+- Submitting a report in an area with no previous fire history and a **Low** risk rating and confirming that the report is accepted.
+- Submitting two reports for the same location simultaneously and confirming that they are linked to one fire.
+- Exceeding the per-device rate limit and confirming that additional reports are blocked.
+- Submitting reports from multiple devices sharing one IP address and confirming that they remain accepted until the per-IP limit is reached.
+- Rejecting a report as a staff user and confirming that it disappears from the public map but remains stored for auditing.
+- Confirming another report, progressing it through each fire status to **Out**, and confirming that its complete timeline appears in the historical view.
+- Confirming that a confirmed report is included in historical fire activity data with its `public report` source tag.
+- Testing each invalid-input and database-failure case and confirming that no invalid or partial record is stored.
+
+
+
+## Quality Requirements
+
+### #12 – Maintainable and Modular System Architecture
+
+**Source:** [GitHub Issue #12](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/12)
+
+**Priority:** Medium
+
+#### Quality Requirement
+
+As a development team member, I want the frontend, backend, AI/ML, and data-processing components to have clearly defined and modular interfaces, so that individual components can be modified, tested, and maintained without requiring unnecessary changes to other parts of the system.
+
+#### Source and Rationale
+
+The project requirements identify maintainability as an important non-functional requirement. The system consists of several distinct components, including the frontend, backend, AI/ML models, and data-processing pipeline. Clearly defined interfaces and modular code will reduce coupling between these components and make future development, debugging, testing, and integration easier.
+
+Automated testing of critical functionality also helps ensure that changes to one component do not unintentionally break existing functionality.
+
+**Original Source:** `docs/requirements.md` — Non-Functional Requirements: Maintainability.
+
+#### Acceptance Criteria
+
+1. **Defined Interfaces**
+   - Communication between the frontend, backend, AI/ML, and data-processing components must be performed through documented APIs or clearly defined module interfaces.
+   - **Verification:** Code review and interface documentation will be used to verify that component communication occurs through these defined interfaces.
+
+2. **Component Independence**
+   - Replacing or modifying one component, such as the AI/ML model, must not require changes to more than **two unrelated components**.
+   - **Verification:** The files and components changed during integration will be reviewed to determine whether modifications remain within this limit.
+
+3. **Reusable Modules**
+   - Functionality used in more than one component must be placed in a shared reusable module rather than duplicated.
+   - **Verification:** Code review will be used to identify duplicated functionality and confirm that shared functionality is implemented through reusable modules.
+
+4. **Automated Testing**
+   - Critical functionality, including API communication, AI/ML model integration, and core data-processing operations, must have automated tests.
+   - At least **80% of identified critical functions** must have an associated automated test.
+   - **Verification:** The set of identified critical functions will be compared against the project's automated tests to confirm that the 80% target is met.
+
+5. **Documentation**
+   - All public APIs and component interfaces must be documented.
+   - Documentation must specify the expected **inputs, outputs, and purpose** of each public API or interface.
+   - Important non-obvious implementation decisions must include documentation or explanatory comments.
+   - **Verification:** Code and documentation review will confirm that all public APIs and component interfaces contain the required information.
+
+6. **Regression Verification**
+   - All existing automated tests must pass before a change is merged into the `main` branch.
+   - **Verification:** The project's automated test suite or CI pipeline must report that all existing tests pass before the change is merged.
+
+#### Measurement Details
+
+Maintainability will be evaluated using the following measurable targets and verification methods:
+
+- **Interface definition:** Frontend, backend, AI/ML, and data-processing communication must occur through documented APIs or module interfaces, verified through code review and interface documentation.
+- **Component independence:** A modification or replacement of one component must require changes to no more than **two unrelated components**, verified by reviewing the affected files and components during integration.
+- **Automated test coverage:** At least **80% of identified critical functions** must have an associated automated test.
+- **Documentation:** **All public APIs and component interfaces** must document their expected inputs, outputs, and purpose.
+- **Regression testing:** **100% of existing automated tests must pass** before a change is merged into `main`.
+- **Reusable functionality:** Functionality shared by multiple components must be implemented as a reusable module rather than duplicated, verified through code review.
