@@ -35,7 +35,6 @@ These limitations support our decision to treat model outputs as decision-suppor
 - NASA FIRMS — Fire Map and detection limitations:  
   https://firms.modaps.eosdis.nasa.gov/map/
 
-
 ---
 
 # Stakeholders
@@ -641,6 +640,8 @@ The following requirements have not yet been fully validated and should therefor
 
 These assumptions will be refined through dataset investigation, technical prototyping, requirements discussions, user-story review, and stakeholder/user feedback where feasible.
 
+---
+
 # Selected Candidate Requirements
 
 ## Functional Requirements
@@ -671,7 +672,7 @@ Only confirmed public reports are included in historical fire activity data used
 
 #### Acceptance Criteria
 
-#### Reporting a Fire
+##### Reporting a Fire
 
 1. Any user, whether logged in or not, can see a **Report a Fire** button on the map page.
 
@@ -699,7 +700,7 @@ Only confirmed public reports are included in historical fire activity data used
 
 9. A report can be submitted regardless of the area's previous fire history or current predicted risk level, including areas with no previous recorded fires or a **Low** risk rating.
 
-#### Storage and Display
+##### Storage and Display
 
 10. Each report is stored in the database with:
     - `source = public report`
@@ -710,7 +711,7 @@ Only confirmed public reports are included in historical fire activity data used
 
 12. User-provided descriptions are displayed as plain text. HTML and scripts are escaped, and links are not clickable.
 
-#### Validation and Abuse Cases
+##### Validation and Abuse Cases
 
 13. A report is rejected with a clear error message if:
     - Its location is outside the supported region.
@@ -724,13 +725,13 @@ Only confirmed public reports are included in historical fire activity data used
 
 15. If the database is unavailable, the user receives an error message and no partial report is stored.
 
-#### Duplicate Reports
+##### Duplicate Reports
 
 16. If a new report is within **2 km and 24 hours** of an existing report or satellite detection, it is linked to the existing fire rather than creating a separate fire.
 
 17. Duplicate detection runs on the server at save time within the same database transaction as the save. If two reports for the same fire are submitted simultaneously, they are linked to one fire rather than creating two separate fires.
 
-#### Status Updates and History
+##### Status Updates and History
 
 18. Only logged-in staff users can change a report's status to:
     - Confirmed
@@ -753,7 +754,7 @@ Only confirmed public reports are included in historical fire activity data used
 
 22. Historical fires from both public reports and satellite detections can be searched by date range and geographic area.
 
-#### Historical Data and Risk Model
+##### Historical Data and Risk Model
 
 23. Only **Confirmed** public reports are included in the historical fire activity data available to the Wildfire Risk Heatmap (#3).
 
