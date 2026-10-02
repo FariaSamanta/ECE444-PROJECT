@@ -777,7 +777,181 @@ The requirement will be verified by:
 - Confirming that a confirmed report is included in historical fire activity data with its `public report` source tag.
 - Testing each invalid-input and database-failure case and confirming that no invalid or partial record is stored.
 
+### #2 – Fire & Risk Information Dashboard
 
+**Source:** [GitHub Issue #2](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/2)
+
+**Priority:** Medium
+
+#### User Story
+
+As an emergency-management user, I want to select a wildfire detection or geographic area and view its relevant fire and risk information, so that I can quickly understand the conditions and severity associated with that location.
+
+#### Source and Rationale
+
+Emergency-management organizations are identified as primary users who need timely information about potential wildfire activity, risk levels, affected areas, and fire progression.
+
+The project requirements also identify a Fire and Risk Information Dashboard as part of the semester scope. The dashboard will provide information such as location, detection time, confidence, risk level, and relevant environmental conditions.
+
+**Original Source:** `docs/requirements.md` — Stakeholders: Emergency Management Organizations; Features Planned for This Semester: Fire and Risk Information Dashboard.
+
+#### Acceptance Criteria
+
+1. The dashboard displays active or historical wildfire detections.
+
+2. A user can select an individual wildfire detection or a predefined geographic region available through the interface.
+
+3. The selected detection or region displays its location.
+
+4. Detection time is displayed when available.
+
+5. Model confidence and wildfire risk level are displayed when available.
+
+6. Relevant environmental conditions are displayed when available.
+
+7. Missing information is clearly shown as unavailable rather than replaced with fabricated values.
+
+8. If a selected geographic region has no available wildfire or risk data, the dashboard clearly indicates that no information is available for that region rather than displaying fabricated or misleading values.
+
+9. Selecting a different wildfire detection or geographic region updates the displayed information.
+
+### #3 – Wildfire Risk Heatmap
+
+**Source:** [GitHub Issue #3](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/3)
+
+**Priority:** High
+
+#### User Story
+
+As a municipal or local-authority user, I want to view wildfire-risk levels geographically, so that I can identify areas experiencing elevated wildfire risk and examine the environmental factors contributing to that risk.
+
+#### Source and Rationale
+
+Municipalities and local authorities are identified as primary users who need localized wildfire-risk information and visualizations.
+
+The requirements specify a wildfire-risk heatmap based on environmental factors including vegetation/fuel conditions, temperature, wind, terrain, and historical fire activity where data is available.
+
+The requirements also state that users should be able to see the primary environmental factors contributing to a predicted risk level and that these factors should not be presented as definitive causation.
+
+#### Acceptance Criteria
+
+##### 1. Geographic Risk Visualization
+
+**Measure:** Geographic risk visualization.
+
+**Target:** The system displays a risk level for every geographic area for which sufficient input data is available.
+
+**Conditions:** Using the geographic region and environmental dataset configured for the semester prototype.
+
+**Verification Method:** Load the test dataset and visually inspect the map to confirm that risk levels are displayed for eligible areas.
+
+##### 2. Risk Information for a Selected Geographic Area
+
+**Measure:** Risk information associated with a selected geographic area.
+
+**Target:** Selecting an area displays its risk level and the available environmental factors contributing to the prediction.
+
+**Conditions:** For an area with valid environmental and model data.
+
+**Verification Method:** Select multiple test areas on the map and verify that the displayed information corresponds to the stored model output.
+
+##### 3. Missing Environmental Data Handling
+
+**Measure:** Missing environmental data handling.
+
+**Target:** Areas with unavailable environmental inputs are clearly identified as having incomplete or unavailable risk information rather than being assigned fabricated values.
+
+**Conditions:** Test cases where one or more required environmental inputs are missing.
+
+**Verification Method:** Remove selected environmental inputs from the test dataset and inspect the resulting map and risk information.
+
+##### 4. Explanation of Model Inputs
+
+**Measure:** Explanation of model inputs.
+
+**Target:** The interface identifies the environmental factors that contributed most strongly to the displayed risk prediction without claiming that they definitively caused the wildfire risk.
+
+**Conditions:** Whenever a user views detailed risk information for an area.
+
+**Verification Method:** Manually inspect explanations for a representative set of test areas.
+
+### #5 – Explainable Risk Factors
+
+**Source:** [GitHub Issue #5](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/5)
+
+**Priority:** Medium
+
+#### User Story
+
+As a municipal or local-authority user, I want to see the environmental factors contributing to a predicted wildfire-risk level, so that I can understand why an area has been assigned a particular risk level.
+
+#### Source and Rationale
+
+Municipalities and local authorities need localized wildfire-risk information and visualizations to support situational awareness and planning.
+
+The requirements specifically state that the system should display the primary environmental factors contributing to a predicted wildfire-risk level and provide a short explanation of why an area received that risk level.
+
+The system may use factors such as temperature, vegetation dryness, wind conditions, terrain, and recent fire activity where data is available.
+
+These explanations should describe model inputs and their contribution to the prediction rather than claim that the factors definitively caused the predicted risk.
+
+#### Acceptance Criteria
+
+##### 1. Environmental Factors Displayed for a Risk Prediction
+
+**Measure:** Environmental factors displayed for a risk prediction.
+
+**Target:** The system displays the top 3 available environmental factors contributing to the predicted risk level, ranked according to the model's per-prediction feature-contribution values. If fewer than 3 contributing factors are available, the system displays the available contributing factors.
+
+**Conditions:** A user selects a geographic area with a completed risk prediction and available environmental data.
+
+**Verification Method:** Select test areas with known model inputs and feature-contribution values. Verify that the factors displayed by the interface correspond to the highest-ranked available contributing factors for each prediction.
+
+##### 2. Method Used to Determine Contributing Factors
+
+**Measure:** Method used to determine contributing factors.
+
+**Target:** The system uses a documented feature-contribution or equivalent explainability method to determine which environmental factors contributed most strongly to each prediction.
+
+**Conditions:** A risk prediction has been generated using environmental inputs.
+
+**Verification Method:** Inspect the model output and implementation documentation to verify that the displayed factors are selected using the defined contribution-ranking method rather than simply being selected because they were model inputs.
+
+##### 3. Risk Explanation Displayed to the User
+
+**Measure:** Risk explanation displayed to the user.
+
+**Target:** The system provides a short explanation describing why the area received its displayed risk level, referencing the relevant contributing factors.
+
+**Conditions:** A geographic area has a valid risk prediction.
+
+**Verification Method:** Manually inspect the explanation for a representative set of test areas and verify that it references factors identified by the model's contribution-ranking method.
+
+##### 4. System Behavior When an Environmental Factor Is Unavailable
+
+**Measure:** System behavior when an environmental factor is unavailable.
+
+**Target:** The system identifies unavailable information rather than displaying fabricated or assumed environmental values.
+
+**Conditions:** One or more environmental inputs are missing for a geographic area.
+
+**Verification Method:** Run the system using test data with missing environmental inputs and verify that the interface indicates the missing information.
+
+##### 5. Wording of the Generated Explanation
+
+**Measure:** Wording of the generated explanation.
+
+**Target:** The explanation describes factors contributing to the model's prediction without presenting them as definitive causes of wildfire risk.
+
+**Conditions:** Whenever an explanation is displayed.
+
+**Verification Method:** Review generated explanations against predefined examples and verify that they describe model inputs/contributions rather than claiming definitive causation.
+
+#### Remaining Assumption
+
+The specific feature-contribution method will depend on the final predictive model selected for the prototype.
+
+If the model does not provide per-prediction contribution values directly, the team must document and agree on an alternative explainability method before implementation and testing.
 
 ## Quality Requirements
 
@@ -838,3 +1012,146 @@ Maintainability will be evaluated using the following measurable targets and ver
 - **Documentation:** **All public APIs and component interfaces** must document their expected inputs, outputs, and purpose.
 - **Regression testing:** **100% of existing automated tests must pass** before a change is merged into `main`.
 - **Reusable functionality:** Functionality shared by multiple components must be implemented as a reusable module rather than duplicated, verified through code review.
+
+### #4 – Reliable Handling of Data and Service Failures
+
+**Source:** [GitHub Issue #4](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/4)
+
+**Priority:** Medium
+
+#### User Story
+
+As an emergency-management user, I want the wildfire monitoring platform to remain usable when an external data source, API, or model component fails, so that I can continue accessing available wildfire information without being misled by missing or invalid data.
+
+#### Source and Rationale
+
+The project requirements state that failures in one external data source should not cause the entire application to become unavailable. Missing environmental data should be clearly indicated rather than replaced with fabricated values, and model or API failures should be handled gracefully.
+
+This requirement supports emergency-management users who depend on the platform for wildfire situational awareness. Because the platform relies on external wildfire, environmental, and model components, failure of one dependency should not prevent users from accessing information from components that remain available.
+
+**Original Source:** `docs/requirements.md` — Non-Functional Requirements: Reliability; Stakeholders: Emergency Management Organizations.
+
+#### Target Justification
+
+The reliability targets below are provisional project constraints. In particular, the 100% unavailable-value handling target is used because displaying fabricated replacement data could mislead users about wildfire or environmental conditions.
+
+These targets may be refined following testing and stakeholder feedback.
+
+#### Acceptance Criteria
+
+##### Measure
+
+Application availability and correct handling of unavailable data when an external dependency fails.
+
+##### Target
+
+- The application remains accessible when one external data source or service fails.
+- **100% of tested unavailable values** are clearly identified as unavailable rather than replaced with fabricated values.
+- Failure of an individual API, external data source, or model component does not crash the entire application.
+- Derived outputs that depend on unavailable required input data are clearly identified as incomplete or unavailable rather than displayed as fully valid results.
+
+##### Conditions
+
+Testing will be performed in the team's deployment or test environment by individually simulating:
+
+- An unavailable external data source.
+- A failed API request.
+- A model-processing failure.
+
+##### Verification Method
+
+For each simulated dependency failure, verify that:
+
+1. The application continues to load unaffected functionality.
+2. Unaffected wildfire information remains accessible.
+3. Affected information displays an appropriate error or unavailable state.
+4. Missing environmental information is clearly identified as unavailable.
+5. The system does not fabricate replacement values.
+6. An API or model failure does not crash the entire application.
+7. If unavailable data is required to compute a derived output, such as a wildfire risk score, the derived output is marked as incomplete or unavailable and is not presented as a complete result.
+
+### #6 – Usability/Understandability
+
+**Source:** [GitHub Issue #6](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/6)
+
+**Priority:** Medium
+
+#### User Story
+
+As a wildfire-monitoring user without specialist knowledge of satellite or geospatial datasets, I want wildfire-risk information and confidence values to be clearly labelled and understandable, so that I can interpret the displayed information correctly.
+
+#### Source and Rationale
+
+The requirements state that wildfire-risk information should be understandable without specialist knowledge and that risk levels, confidence values, and environmental conditions should be clearly labelled.
+
+The 90% task-completion rate is a provisional team assumption for the semester prototype and may be adjusted if user testing provides evidence for a different threshold.
+
+#### Acceptance Criteria
+
+##### 1. Interpretation Success Rate
+
+**Measure:** Percentage of representative non-specialist users who can correctly interpret the displayed risk level and confidence information.
+
+**Target:** At least **90% of test participants** must correctly identify the displayed risk level and explain the meaning of the confidence indicator.
+
+If exactly **5 participants** are tested, **all 5 participants must pass** to meet the 90% target.
+
+##### 2. Participant Conditions
+
+Participants must:
+
+- Not have been involved in developing the application.
+- Have no formal or professional background in remote sensing, GIS, or wildfire-risk modelling.
+
+Because actual emergency-management users may not be available for semester testing, non-specialist participants will be treated as proxy users.
+
+##### 3. Test Scenarios
+
+Participants will be shown representative wildfire-risk map and dashboard views that include:
+
+- High risk + high confidence.
+- High risk + low confidence (e.g., 40%).
+- At least one view with missing or unavailable environmental data.
+
+##### 4. Risk-Level Interpretation
+
+A participant passes the risk-level task if they correctly identify the risk category displayed by the application.
+
+##### 5. Confidence Interpretation
+
+A participant passes the confidence task only if their explanation indicates that the confidence value represents the model's confidence in its own output and does not represent:
+
+- A guarantee of wildfire occurrence; or
+- By itself, the probability that a wildfire will occur.
+
+For example, interpreting a 40% confidence value as meaning that there is a 40% chance of a wildfire would be considered incorrect.
+
+#### Verification Method
+
+Conduct a usability test with at least **5 participants**.
+
+For each participant:
+
+1. Present the selected representative wildfire-risk scenarios.
+2. Record whether the participant correctly identifies the displayed risk level.
+3. Record whether the participant correctly explains the confidence indicator according to the defined scoring rule.
+4. Determine whether the participant successfully completed both interpretation tasks.
+
+Calculate the percentage of participants who pass both tasks.
+
+At least **90% must pass**. If exactly 5 participants are tested, all 5 must pass.
+
+#### External Supporting Evidence
+
+Nielsen Norman Group's usability-testing guidance will be used as supporting evidence for using a small participant group, but not as justification for the 90% success-rate threshold.
+
+The Canadian Wildland Fire Information System (CWFIS) will be considered as a reference for established public wildfire-danger terminology and classification conventions.
+
+#### Remaining Assumptions
+
+- The **90% task-completion target** is provisional and may be revised following user testing.
+- A minimum of **5 participants** is feasible for the semester prototype.
+- Non-specialist proxy participants are an acceptable substitute when representative emergency-management users cannot be recruited.
+- Proxy participants should have no formal or professional background in remote sensing, GIS, or wildfire-risk modelling.
+- Risk categories, confidence terminology, and missing-data indicators will be defined consistently before usability testing.
+- The selected test views will represent the types of risk/confidence combinations and missing-data situations that users may encounter.
