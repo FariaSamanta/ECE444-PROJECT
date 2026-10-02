@@ -606,7 +606,7 @@ NASA FIRMS, for example, provides near-real-time and real-time products for acti
 **How to clarify:**  
 Use the team's user stories, requirements review, stakeholder evidence, technical prototypes, and development capacity to finalize the minimum viable feature set.
 
-This section will be updated after user-story selection and review, as required by the milestone.
+**Resolution:**  Feature priorities were finalized through the team's candidate-story selection and review process. The selected requirements and their priorities are documented in the Selected Candidate Requirements section below.
 
 ---
 
