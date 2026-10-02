@@ -953,6 +953,44 @@ The specific feature-contribution method will depend on the final predictive mod
 
 If the model does not provide per-prediction contribution values directly, the team must document and agree on an alternative explainability method before implementation and testing.
 
+### #10 – Wildfire Detection and Confidence Scoring
+
+**Source:** [GitHub Issue #10](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/10)
+
+**Priority:** High
+
+#### User Story
+
+As an emergency-management user, I want the system to classify satellite and environmental data to identify potential wildfire locations, along with a detection confidence score, so that I can evaluate the reliability of each detection before acting on it.
+
+#### Source and Rationale
+
+The project requirements state that one of the features planned for this semester is Wildfire Detection. The feature commits the team to processing historical and/or near-real-time satellite fire data using a baseline AI/computer vision approach, and to displaying detection confidence and relevant information for each detected fire.
+
+**Original Source:** `docs/requirements.md` — Features Planned for This Semester: Wildfire Detection.
+
+This story covers the underlying detection/classification step of identifying a potential fire and scoring confidence in it. It is a dependency of the Early-Warning Alert Simulation story, which consumes these detections to trigger alerts.
+
+#### Acceptance Criteria
+
+1. Given satellite/geospatial data, such as NASA FIRMS, for a monitored region, the system classifies whether the data indicates a potential wildfire.
+
+2. Each detection is assigned a confidence score reflecting the model's certainty.
+
+3. The detection's location, timestamp, and confidence score are displayed alongside the classification result.
+
+4. Detections below a minimum confidence threshold are visually distinguished from higher-confidence detections rather than displayed identically.
+
+5. The minimum confidence threshold is implemented as a configurable constant rather than a hardcoded value.
+
+6. The initial confidence threshold is selected after backtesting against the historical dataset and is treated as a provisional assumption to validate rather than a fixed target.
+
+7. If input data for a region is incomplete or unavailable, no detection is fabricated and the gap is reported instead.
+
+#### Related
+
+The Early-Warning Alert Simulation on Historical Wildfire Events depends on this story's detection and confidence output.
+
 ## Quality Requirements
 
 ### #12 – Maintainable and Modular System Architecture
@@ -1155,3 +1193,124 @@ The Canadian Wildland Fire Information System (CWFIS) will be considered as a re
 - Proxy participants should have no formal or professional background in remote sensing, GIS, or wildfire-risk modelling.
 - Risk categories, confidence terminology, and missing-data indicators will be defined consistently before usability testing.
 - The selected test views will represent the types of risk/confidence combinations and missing-data situations that users may encounter.
+
+### #9 – Responsive Interactive Map Performance
+
+**Source:** [GitHub Issue #9](https://github.com/RianaMalhotra/ECE444-PROJECT/issues/9)
+
+**Priority:** High
+
+#### User Story
+
+As a wildfire-monitoring user, whether a member of the public on a phone or an emergency-management/municipal analyst on desktop or mobile, I want the wildfire map to load and respond quickly when I pan, zoom, switch layers, and inspect detections, so that I can check fire locations and risk levels without losing focus during time-sensitive situations.
+
+#### Source and Rationale
+
+The existing Performance requirement states that the map should load and respond to user interactions within a reasonable time. This story replaces that non-testable requirement with measurable performance targets.
+
+The Primary Users requirements identify rapid interpretation of wildfire detections as an interface priority. The application is also mobile-first for general-public users, while emergency-management and municipal users may use both desktop and mobile devices.
+
+Expensive AI and geospatial processing is intended to run asynchronously, so map interactions must not wait for model inference.
+
+#### Assumptions
+
+- **A1:** All numeric targets and workload sizes are provisional. They will be re-checked against the first deployed prototype and revised if necessary.
+- **A2:** A dataset containing up to **10,000 detection points** is assumed to represent a busy period in one region. This assumption will be validated using FIRMS detection counts for the selected region during a severe fire period.
+
+#### Definitions
+
+**Accepts input:** The map responds to a pan or zoom action and the view visibly moves.
+
+**Fully displayed:** All visible detection points and heatmap tiles for the current view have finished rendering and no loading indicator is displayed.
+
+#### Test Environments
+
+**Mobile**
+
+- Playwright/Chrome mobile emulation of a mid-range Android phone, such as a Pixel 7 profile.
+- 4× CPU slowdown.
+- Chrome DevTools Slow 4G network throttling.
+
+**Desktop**
+
+- Laptop with at least 8 GB RAM.
+- Latest desktop Chrome.
+- Unthrottled connection of at least 25 Mbps download, measured before each test run.
+
+**Both environments**
+
+- Team's deployed backend.
+- One region containing up to 10,000 detection points and its risk heatmap grid.
+
+#### Q1 – Initial Map Load
+
+**Measure:** Time from navigating to the map page until the map accepts input and the basemap, detection layer, and risk heatmap are fully displayed.
+
+**Target:**
+
+- Mobile: At least **95% of loads complete within 5 seconds**.
+- Desktop: At least **95% of loads complete within 3 seconds**.
+
+**Conditions:** Each defined test environment with a cold browser cache.
+
+**Verification Method:** Perform 30 scripted page loads per environment using Playwright plus a Lighthouse run in both mobile and desktop modes on the deployed site. Report the 95th-percentile load time for each environment.
+
+#### Q2 – Map Interaction Response
+
+**Measure:** Time from a user action until the updated view is fully displayed, measured separately for pan, zoom, and layer-toggle actions.
+
+**Target:** For each action type, at least 95% of interactions complete within:
+
+- Mobile: **1.5 seconds**
+- Desktop: **1 second**
+
+If an update takes longer, a loading indicator must appear within **0.5 seconds**.
+
+**Conditions:** Each defined test environment with the page already loaded.
+
+**Verification Method:** Use a Playwright script to perform:
+
+- 30 pans
+- 30 zooms
+- 30 layer toggles
+
+per environment. Mobile testing uses touch events in mobile emulation. Record timings and report the 95th-percentile time for each action type and environment.
+
+Manually confirm the loading indicator by throttling the network using Chrome DevTools.
+
+#### Q3 – Detection / Area Detail API
+
+**Measure:** Server response time and error rate for requests returning details about a selected detection or area.
+
+**Target:**
+
+- At least **95% of requests return within 500 ms**, measured at the server.
+- Fewer than **1% of requests** return an error, defined as a 5xx response or timeout.
+
+**Conditions:**
+
+- Deployed backend.
+- 20 concurrent users (provisional).
+- Same dataset used in the other performance tests.
+- Request mix:
+  - 70% single-detection detail requests.
+  - 30% area-detail requests.
+
+**Verification Method:** Conduct a load test using k6 or Locust with 20 concurrent users for 5 minutes. Report the 95th-percentile response time and error rate.
+
+#### Boundary and Failure Cases
+
+1. If the visible area contains more points than can be rendered within the performance target, detections are clustered rather than dropped or allowed to freeze the page.
+
+2. Map interactions do not wait for AI model inference. Model results load asynchronously and display a **Processing…** state until ready.
+
+3. If a data layer fails to load, the rest of the map remains interactive and the failed layer displays an error state, consistent with #4 – Reliable Handling of Data and Service Failures.
+
+4. On a phone-sized screen, map controls including zoom, layer toggle, and **Report a Fire** remain usable without horizontal scrolling.
+
+#### Related Requirements
+
+- #2 – Fire & Risk Information Dashboard
+- #3 – Wildfire Risk Heatmap
+- #4 – Reliable Handling of Data and Service Failures
+- #6 – Usability/Understandability
