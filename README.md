@@ -1,8 +1,8 @@
-# Wildfire Early Detection and Risk Assessment Platform - Team Ash Detectives
+# Wildfire Early Detection and Risk Assessment Platform — Team Ash Detectives
 
 ## Overview
 
-This project is a wildfire early-detection and risk-assessment platform developed for **ECE444 – Software Engineering** at the University of Toronto.
+This project is a **wildfire early-detection and risk-assessment platform** developed for **ECE444 – Software Engineering** at the University of Toronto.
 
 The system combines environmental data, geospatial information, and AI/ML techniques to help detect potential wildfire events and communicate wildfire risk through an interactive map.
 
@@ -22,7 +22,7 @@ The platform is designed to provide users with clear and accessible information 
 
 ## System Architecture
 
-The application is organized into several major components:
+The application is organized into four major components:
 
 ### Frontend
 
@@ -40,7 +40,7 @@ Processes relevant input data to support wildfire detection and risk assessment.
 
 Collects, validates, and transforms environmental and geospatial data required by the application.
 
-The components use clearly defined interfaces to reduce coupling and improve maintainability and testability.
+These components use clearly defined interfaces to reduce coupling and improve maintainability, extensibility, and testability.
 
 ## Requirements
 
@@ -50,15 +50,24 @@ The project's functional and non-functional requirements are documented in:
 
 The requirements document contains the selected user stories, priorities, rationale, acceptance criteria, and references to the corresponding GitHub Issues.
 
-## Development Process
+## Project Management
 
-Development is managed using **GitHub Issues** and a **GitHub Project Kanban board**.
+Development is managed using **GitHub Issues** and a **GitHub Projects Kanban board**.
 
-Implementation work is broken into tasks linked to the originating user stories and requirements.
+Implementation work is divided into development tasks linked to the originating user stories and requirements.
 
 The project board follows the workflow:
 
 **Todo → In Progress → Done**
+
+### Project Management Tools
+
+| Tool | Purpose | URL |
+|---|---|---|
+| GitHub Repository | Source code, documentation, and version control | [Repository](https://github.com/RianaMalhotra/ECE444-PROJECT) |
+| GitHub Issues | User stories, requirements, bugs, and implementation tasks | [Issues](https://github.com/RianaMalhotra/ECE444-PROJECT/issues) |
+| GitHub Projects | Kanban board for tracking development progress | [Project Board](https://github.com/users/RianaMalhotra/projects/1) |
+| GitHub Pull Requests | Code review and integration of changes | [Pull Requests](https://github.com/RianaMalhotra/ECE444-PROJECT/pulls?q=is%3Apr+state%3Aclosed) |
 
 ## Repository Structure
 
@@ -76,7 +85,7 @@ The repository structure may evolve as additional components are implemented.
 
 ## Testing
 
-Automated testing is used for critical functionality.
+Automated testing is used to protect critical functionality and identify regressions throughout development.
 
 Testing focuses on:
 
@@ -87,14 +96,25 @@ Testing focuses on:
 - Integration between major system components
 - Regression prevention
 
-Continuous integration checks are used to run relevant automated tests as the project develops.
+Continuous integration checks are used to automatically run relevant tests as the project develops.
+
+## Development Workflow
+
+Development follows an issue-driven workflow:
+
+1. User stories and requirements are documented and linked to GitHub Issues.
+2. Implementation work is divided into development tasks.
+3. Tasks are tracked using the GitHub Projects Kanban board.
+4. Developers implement changes on dedicated Git branches.
+5. Changes are reviewed through Pull Requests before being merged.
+6. Automated tests and CI checks are used to verify changes and reduce regressions.
 
 ## Team
 
-Developed as part of **ECE444 – Software Engineering** at the University of Toronto.
+Developed by **Team Ash Detectives** as part of **ECE444 – Software Engineering** at the University of Toronto.
 
 ## Project Status
 
 🚧 **Under Development**
 
-The team is currently progressing from requirements engineering into implementation. Development tasks and progress are tracked through the repository's GitHub Issues and Project board.
+The project is currently progressing from requirements engineering into implementation. Development tasks and progress are tracked through the repository's GitHub Issues and Project board.
