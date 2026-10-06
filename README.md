@@ -96,7 +96,7 @@ Testing focuses on:
 - Integration between major system components
 - Regression prevention
 
-Continuous integration checks are used to automatically run relevant tests as the project develops.
+Continuous integration checks will be introduced as the project develops.
 
 ## Development Workflow
 
@@ -107,7 +107,7 @@ Development follows an issue-driven workflow:
 3. Tasks are tracked using the GitHub Projects Kanban board.
 4. Developers implement changes on dedicated Git branches.
 5. Changes are reviewed through Pull Requests before being merged.
-6. Automated tests and CI checks are used to verify changes and reduce regressions.
+6. Automated tests are used to verify changes and reduce regressions.
 
 ## Team
 
