@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a Fire – Prototype (v1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2430; --muted: #4A5563; --line: #D5DBE2; --bg: #F4F6F8;
+    --fire: #C2410C; --fire-soft: #FDF0E8; --blue: #1D4ED8;
+    --land: #DDE8D6; --water: #A9C7DE; --disabled: #A7B0BC;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--ink);
+    background: #E3E7EC; display: flex; justify-content: center; align-items: center;
+  }
+  button, input, textarea { font-family: inherit; }
+  /* Phone frame on desktop, full screen on a real phone */
+  .phone {
+    width: 390px; height: 844px; background: var(--bg); position: relative;
+    overflow: hidden; border-radius: 28px; box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+    display: flex; flex-direction: column;
+  }
+  @media (max-width: 500px) {
+    body { display: block; background: var(--bg); }
+    .phone { width: 100%; height: 100vh; height: 100dvh; border-radius: 0; box-shadow: none; }
+  }
+  .screen { display: none; flex-direction: column; height: 100%; background: #fff; }
+  .screen.active { display: flex; }
+  #map.screen { background: var(--bg); }
+
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 14px; background: #fff; border-bottom: 1px solid var(--line); }
+  .brand { font-size: 18px; font-weight: 700; }
+  .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .navbar { display: flex; align-items: center; gap: 12px; padding: 18px 20px 12px; }
+  .back { width: 44px; height: 44px; margin-left: -10px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .step { font-size: 13px; color: var(--muted); }
+  .body { padding: 0 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
+  h1 { margin: 0; font-size: 24px; line-height: 1.25; }
+  .footer { margin-top: auto; padding: 16px 20px 28px; }
+  .primary { width: 100%; height: 54px; border: none; border-radius: 12px; background: var(--ink); color: #fff; font-size: 17px; font-weight: 600; cursor: pointer; }
+  .primary:disabled { background: var(--disabled); cursor: not-allowed; }
+  .primary.fire { background: var(--fire); display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .secondary { width: 100%; height: 54px; border: 1.5px solid var(--ink); border-radius: 12px; background: #fff; color: var(--ink); font-size: 17px; font-weight: 600; cursor: pointer; }
+  .outline { height: 50px; border: 1.5px solid var(--ink); border-radius: 12px; background: #fff; color: var(--ink); font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .warn { background: #FDECEA; color: #7A1E12; border-radius: 10px; padding: 12px 14px; font-size: 14px; line-height: 1.4; }
+  .note { background: #FFF4E5; color: #6B3A00; border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.4; }
+  .hint { font-size: 14px; color: var(--muted); }
+  .hidden { display: none !important; }
+
+  /* Fake maps */
+  .bigmap { position: relative; flex-grow: 1; background: var(--land); overflow: hidden; }
+  .minimap { position: relative; height: 300px; border-radius: 12px; overflow: hidden; background: var(--land); border: 1px solid #C3CCD6; cursor: crosshair; flex-shrink: 0; }
+  .shape { position: absolute; }
+  .lake { background: var(--water); border-radius: 50%; }
+  .road { background: #fff; }
+  .place { position: absolute; font-size: 12px; color: #3B4552; font-weight: 500; }
+  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--fire); border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .diamond { width: 16px; height: 16px; background: #fff; border: 3px solid var(--ink); transform: rotate(45deg); }
+  .legend { position: absolute; left: 12px; top: 12px; background: #fff; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 6px rgba(0,0,0,0.15); }
+  .legend-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .yourpin { position: absolute; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .tag { background: var(--ink); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
+  .pin { position: absolute; transform: translate(-50%, -100%); pointer-events: none; }
+  .mapbar { padding: 16px 20px 28px; background: #fff; border-top: 1px solid var(--line); }
+
+  /* Choice chips */
+  .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .chip { height: 52px; border-radius: 12px; border: 1.5px solid #8A94A1; background: #fff; color: var(--ink); font-size: 16px; font-weight: 600; cursor: pointer; }
+  .chip.small { height: 48px; font-size: 15px; font-weight: 500; }
+  .chip[aria-pressed="true"] { border: 2px solid var(--fire); background: var(--fire-soft); }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .label { font-size: 16px; font-weight: 600; }
+  input[type="time"], textarea { border: 1.5px solid #8A94A1; border-radius: 10px; font-size: 16px; color: var(--ink); }
+  input[type="time"] { height: 46px; padding: 0 12px; }
+  textarea { height: 110px; padding: 10px 12px; resize: none; }
+
+  /* Review card */
+  .card { border: 1px solid var(--line); border-radius: 12px; }
+  .row { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; border-bottom: 1px solid #E4E8EE; }
+  .row:last-child { border-bottom: none; }
+  .row .k { font-size: 13px; color: var(--muted); }
+  .row .v { font-size: 16px; white-space: pre-line; }
+
+  /* Permission popup */
+  .overlay { position: absolute; inset: 0; background: rgba(15,20,28,0.45); display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .dialog { background: #fff; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px; width: 100%; }
+  .dialog-title { font-size: 16px; font-weight: 600; line-height: 1.35; }
+  .dialog-btns { display: flex; gap: 10px; }
+  .dialog-btns button { flex-grow: 1; height: 46px; border-radius: 10px; font-size: 15px; cursor: pointer; }
+  .deny { border: 1.5px solid #8A94A1; background: #fff; color: var(--ink); }
+  .allow { border: none; background: var(--blue); color: #fff; font-weight: 600; }
+
+  /* Confirmation */
+  .done { padding: 120px 28px 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .tick { width: 76px; height: 76px; border-radius: 50%; background: #E6F4EA; display: flex; align-items: center; justify-content: center; }
+  .done p { margin: 0; font-size: 16px; line-height: 1.5; color: #3B4552; }
+</style>
+</head>
+<body>
+<main class="phone">
+
+  <!-- SCREEN 1: MAP -->
+  <section id="map" class="screen active" aria-label="Wildfire map">
+    <div class="topbar">
+      <div>
+        <div class="brand">Ash Detectives</div>
+        <div class="sub">Wildfire map · Northwestern Ontario</div>
+      </div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/><path d="M12 22a7 7 0 0 0 7-7c0-2-1-4-2-5"/><path d="M5 15a7 7 0 0 0 7 7"/></svg>
+    </div>
+    <div class="bigmap">
+      <div class="shape lake" style="left:-40px;top:90px;width:230px;height:150px"></div>
+      <div class="shape lake" style="left:240px;top:380px;width:190px;height:120px;border-radius:45%"></div>
+      <div class="shape road" style="left:-20px;top:330px;width:460px;height:6px;transform:rotate(-12deg)"></div>
+      <div class="shape road" style="left:150px;top:-20px;width:6px;height:640px;transform:rotate(8deg)"></div>
+      <div class="place" style="left:30px;top:300px">Ignace</div>
+      <div class="place" style="left:250px;top:220px">Dryden Rd</div>
+      <div class="dot" style="left:270px;top:120px"></div>
+      <div class="dot" style="left:92px;top:470px"></div>
+      <div class="shape diamond" style="left:200px;top:560px"></div>
+      <div id="yourReport" class="yourpin hidden">
+        <div class="tag">Your report · Unverified</div>
+        <div class="diamond"></div>
+      </div>
+      <div class="legend">
+        <div class="legend-row"><span style="width:12px;height:12px;border-radius:50%;background:#C2410C;display:inline-block"></span>Satellite detection</div>
+        <div class="legend-row"><span style="width:9px;height:9px;margin:0 2px;background:#fff;border:2px solid #1B2430;transform:rotate(45deg);display:inline-block"></span>Unverified public report</div>
+      </div>
+    </div>
+    <div class="mapbar">
+      <button class="primary fire" id="startReport">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+        Report a Fire
+      </button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: LOCATION -->
+  <section id="location" class="screen" aria-label="Step 1: location">
+    <div class="navbar">
+      <button class="back" data-go="map" aria-label="Back"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="step">Step 1 of 3</div>
+    </div>
+    <div class="body">
+      <div class="warn"><strong>This is not an emergency service.</strong> If there is immediate danger, call 911.</div>
+      <h1>Where is the fire?</h1>
+      <button class="outline" id="useLocation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/></svg>
+        Use my current location
+      </button>
+      <div id="permDenied" class="note hidden">Location isn't available. Tap the map below to mark where the fire is.</div>
+      <div class="hint">Or tap the map to mark the spot</div>
+      <div class="minimap" id="minimap" role="button" aria-label="Map: tap to mark the fire location">
+        <div class="shape lake" style="left:-30px;top:40px;width:180px;height:110px"></div>
+        <div class="shape road" style="left:-20px;top:180px;width:420px;height:5px;transform:rotate(-12deg)"></div>
+        <div class="shape road" style="left:190px;top:-20px;width:5px;height:360px;transform:rotate(8deg)"></div>
+        <div id="pin" class="pin hidden">
+          <svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true"><path d="M15 37C15 37 2 22 2 14a13 13 0 0 1 26 0c0 8-13 23-13 23z" fill="#1B2430"/><circle cx="15" cy="14" r="5" fill="#fff"/></svg>
+        </div>
+      </div>
+      <div id="locSet" class="hidden" style="font-size:14px">Location set: <span id="coordsText"></span></div>
+    </div>
+    <div class="footer"><button class="primary" id="toDetails" disabled>Next</button></div>
+
+    <div id="permDialog" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="permTitle">
+      <div class="dialog">
+        <div class="dialog-title" id="permTitle">Allow this site to use your location?</div>
+        <div class="dialog-btns">
+          <button class="deny" id="denyLoc">Don't allow</button>
+          <button class="allow" id="allowLoc">Allow</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: DETAILS -->
+  <section id="details" class="screen" aria-label="Step 2: what you saw">
+    <div class="navbar">
+      <button class="back" data-go="location" aria-label="Back"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="step">Step 2 of 3</div>
+    </div>
+    <div class="body">
+      <h1>What did you see?</h1>
+      <div class="grid3" id="sawGroup">
+        <button class="chip" data-saw="Flames" aria-pressed="false">Flames</button>
+        <button class="chip" data-saw="Smoke" aria-pressed="false">Smoke</button>
+        <button class="chip" data-saw="Both" aria-pressed="false">Both</button>
+      </div>
+      <div class="field">
+        <div class="label">When did you see it?</div>
+        <div class="grid2" id="whenGroup">
+          <button class="chip small" data-when="now" aria-pressed="true">Just now</button>
+          <button class="chip small" data-when="earlier" aria-pressed="false">Earlier today</button>
+        </div>
+        <div id="timeField" class="field hidden">
+          <label for="seenTime" class="hint">Time you saw it</label>
+          <input id="seenTime" type="time">
+        </div>
+      </div>
+      <div class="field">
+        <label for="desc" class="label">Anything else? <span style="font-weight:400;color:#4A5563">(optional)</span></label>
+        <textarea id="desc" maxlength="500" placeholder="e.g. Grey smoke behind the trees near the highway"></textarea>
+      </div>
+    </div>
+    <div class="footer"><button class="primary" id="toReview" disabled>Next</button></div>
+  </section>
+
+  <!-- SCREEN 4: REVIEW -->
+  <section id="review" class="screen" aria-label="Step 3: check your report">
+    <div class="navbar">
+      <button class="back" data-go="details" aria-label="Back"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="step">Step 3 of 3</div>
+    </div>
+    <div class="body">
+      <h1>Check your report</h1>
+      <div class="card">
+        <div class="row"><div class="k">Location</div><div class="v" id="rLoc"></div></div>
+        <div class="row"><div class="k">What you saw</div><div class="v" id="rSaw"></div></div>
+        <div class="row"><div class="k">When</div><div class="v" id="rWhen"></div></div>
+        <div class="row"><div class="k">Details</div><div class="v" id="rDesc"></div></div>
+      </div>
+      <div class="warn">This report is not sent to 911 or fire services. If there is immediate danger, call 911.</div>
+    </div>
+    <div class="footer"><button class="primary fire" id="submit">Submit report</button></div>
+  </section>
+
+  <!-- SCREEN 5: CONFIRMATION -->
+  <section id="done" class="screen" aria-label="Report received">
+    <div class="done">
+      <div class="tick"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1E6B34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></div>
+      <h1 style="font-size:26px">Report received</h1>
+      <p>Your report is now on the map as <strong>Unverified</strong> until staff review it.</p>
+      <p style="font-size:15px">It has <strong>not</strong> been sent to emergency services. If there is immediate danger, call 911.</p>
+      <div class="step">Report ID: AD-20417</div>
+    </div>
+    <div class="footer"><button class="secondary" data-go="map">Back to map</button></div>
+  </section>
+
+</main>
+
+<script>
+  // Prototype state (in memory only; reload the page to reset between participants)
+  const state = { pin: null, saw: null, when: 'now', seenTime: '', desc: '', submitted: false };
+  const $ = (id) => document.getElementById(id);
+
+  function show(id) {
+    document.querySelectorAll('.screen').forEach((s) => s.classList.toggle('active', s.id === id));
+    $('permDialog').classList.add('hidden');
+    if (id === 'map') renderMap();
+    if (id === 'review') renderReview();
+  }
+
+  function coordsText() {
+    if (!state.pin) return '';
+    const lat = (49.42 - state.pin.y * 0.0021).toFixed(4);
+    const lon = (91.78 - state.pin.x * 0.0034).toFixed(4);
+    return (state.pin.gps ? 'Your current location' : 'Point on map') + ' (' + lat + '° N, ' + lon + '° W)';
+  }
+
+  function setPin(x, y, gps) {
+    state.pin = { x: x, y: y, gps: gps };
+    const p = $('pin');
+    p.style.left = x + '%'; p.style.top = y + '%';
+    p.classList.remove('hidden');
+    $('coordsText').textContent = coordsText();
+    $('locSet').classList.remove('hidden');
+    $('toDetails').disabled = false;
+  }
+
+  function renderMap() {
+    const r = $('yourReport');
+    if (state.submitted && state.pin) {
+      r.style.left = state.pin.x + '%'; r.style.top = state.pin.y + '%';
+      r.classList.remove('hidden');
+    } else {
+      r.classList.add('hidden');
+    }
+  }
+
+  function renderReview() {
+    $('rLoc').textContent = coordsText();
+    $('rSaw').textContent = state.saw || '';
+    $('rWhen').textContent = state.when === 'now' ? 'Just now' : ('Earlier today' + (state.seenTime ? ', ' + state.seenTime : ''));
+    $('rDesc').textContent = state.desc || 'None';
+  }
+
+  function resetForm() {
+    Object.assign(state, { pin: null, saw: null, when: 'now', seenTime: '', desc: '', submitted: false });
+    $('pin').classList.add('hidden');
+    $('locSet').classList.add('hidden');
+    $('permDenied').classList.add('hidden');
+    $('toDetails').disabled = true;
+    $('toReview').disabled = true;
+    document.querySelectorAll('[data-saw]').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+    document.querySelectorAll('[data-when]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.when === 'now' ? 'true' : 'false'));
+    $('timeField').classList.add('hidden');
+    $('seenTime').value = '';
+    $('desc').value = '';
+  }
+
+  // Navigation
+  document.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => show(b.dataset.go)));
+  $('startReport').addEventListener('click', () => { resetForm(); show('location'); });
+  $('toDetails').addEventListener('click', () => { if (state.pin) show('details'); });
+  $('toReview').addEventListener('click', () => { if (state.saw) show('review'); });
+  $('submit').addEventListener('click', () => { state.submitted = true; show('done'); });
+
+  // Location (simulated permission prompt; no real location is used)
+  $('useLocation').addEventListener('click', () => $('permDialog').classList.remove('hidden'));
+  $('allowLoc').addEventListener('click', () => { $('permDialog').classList.add('hidden'); $('permDenied').classList.add('hidden'); setPin(46, 58, true); });
+  $('denyLoc').addEventListener('click', () => { $('permDialog').classList.add('hidden'); $('permDenied').classList.remove('hidden'); });
+  $('minimap').addEventListener('click', (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = Math.round(Math.max(4, Math.min(96, ((e.clientX - r.left) / r.width) * 100)));
+    const y = Math.round(Math.max(8, Math.min(96, ((e.clientY - r.top) / r.height) * 100)));
+    setPin(x, y, false);
+  });
+
+  // Details
+  document.querySelectorAll('[data-saw]').forEach((b) => b.addEventListener('click', () => {
+    state.saw = b.dataset.saw;
+    document.querySelectorAll('[data-saw]').forEach((o) => o.setAttribute('aria-pressed', o === b ? 'true' : 'false'));
+    $('toReview').disabled = false;
+  }));
+  document.querySelectorAll('[data-when]').forEach((b) => b.addEventListener('click', () => {
+    state.when = b.dataset.when;
+    document.querySelectorAll('[data-when]').forEach((o) => o.setAttribute('aria-pressed', o === b ? 'true' : 'false'));
+    $('timeField').classList.toggle('hidden', state.when !== 'earlier');
+  }));
+  $('seenTime').addEventListener('change', (e) => { state.seenTime = e.target.value; });
+  $('desc').addEventListener('input', (e) => { state.desc = e.target.value.slice(0, 500); });
+</script>
+</body>
+</html>
